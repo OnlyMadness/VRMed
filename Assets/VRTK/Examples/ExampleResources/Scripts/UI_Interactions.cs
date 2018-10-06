@@ -12,11 +12,16 @@
         public GameObject Scale_Table;
         public GameObject Type_Table;
         public GameObject Type_Game;
+        public GameObject Next_Symbol;
 
         private int[] TableNumbers;
         private string[] TableLetters;
 
         public string symb = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+        public string symb_original = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+
+        private bool Game = false;
+        private int count_click;
 
         public void Button_Red()
         {
@@ -79,8 +84,9 @@
         public void ArrayFillLetters(int size, string[] table)
         {
             System.Random rand = new System.Random();
+            symb = symb.Remove(size * size, symb.Length - size * size);
             for (int i = 0; i < size * size;i++)
-            {
+            {    
                 int NewRandom = rand.Next(symb.Length-1);
                 table[i] = symb[NewRandom].ToString();
                 symb = symb.Remove(NewRandom,1);
@@ -89,67 +95,116 @@
         }
 
         public void Start_Game() {
-            int size = Convert.ToInt32(Scale_Table.GetComponent<Text>().text.Split('x')[0]);
-            int ButtonCount = 0;
-            float X = -130f;
-            float Y = 60f;
-
-            float Table_Heigh = 160;
-            float Table_Width = 300;
-            float Button_Height = Table_Heigh/size;
-            float Button_Width = Table_Width / size;
-
-            int[] TableNumbers = new int[size * size];
-            string[] TableLetters = new string[size * size];
-
-            // ArrayFillNumbers(size,TableNumbers);
-            ArrayFillLetters(size, TableLetters);
-
-            GameObject Table_Canvas = GameObject.Find("Table");
-            for (int i = 0; i < size; i++)
+            GameObject StartStop = GameObject.Find("TextBtnStart");
+            count_click = 0;
+            if (!GameController.Game)
             {
-                for (int j = 0; j < size; j++)
+                GameController.Game = true;   
+                StartStop.GetComponent<Text>().text = "Stop";
+                   
+
+                int size = Convert.ToInt32(Scale_Table.GetComponent<Text>().text.Split('x')[0]);
+                int ButtonCount = 0;
+                float X = -130f;
+                float Y = 60f;
+
+                float Table_Heigh = 160;
+                float Table_Width = 300;
+                float Button_Height = Table_Heigh / size;
+                float Button_Width = Table_Width / size;
+
+                int[] TableNumbers = new int[size * size];
+                string[] TableLetters = new string[size * size];
+
+                if (Type_Table.GetComponent<Dropdown>().value == 0)
                 {
-                    var newButton = new GameObject("Button_" + ButtonCount, typeof(RectTransform));
-                    newButton.transform.SetParent(Table_Canvas.transform);
-                    newButton.layer = 5;
-                    var Button = newButton.AddComponent<Button>();
-
-                    var ButtonRT = Button.GetComponent<RectTransform>();
-                    ButtonRT.position = new Vector3(0f, 0f, 0f);
-                    ButtonRT.anchoredPosition = new Vector3(0f, 0f, 0f);
-                    ButtonRT.localPosition = new Vector3(X + (Button_Width * j), Y, 0f);
-                    ButtonRT.sizeDelta = new Vector2(Button_Width, Button_Height);
-                    ButtonRT.localScale = new Vector3(1f, 1f, 1f);
-                    ButtonRT.localEulerAngles = new Vector3(0f, 0f, 0f);
-
-                    newButton.AddComponent<Image>();
-
-                    var newText = new GameObject("Text", typeof(RectTransform));
-                    newText.transform.SetParent(newButton.transform);
-                    newText.layer = 5;
-
-                    var textRT = newText.GetComponent<RectTransform>();
-                    textRT.position = new Vector3(0f, 0f, 0f);
-                    textRT.anchoredPosition = new Vector3(0f, 0f, 0f);
-                    textRT.localPosition = new Vector3(0f, 0f, 0f);
-                    textRT.sizeDelta = new Vector2(Button_Width, Button_Height);
-                    textRT.localScale = new Vector3(1f, 1f, 1f);
-                    textRT.localEulerAngles = new Vector3(0f, 0f, 0f);
-
-
-                    var txt = newText.AddComponent<Text>();
-
-                   // txt.text = TableNumbers[ButtonCount].ToString();
-                    txt.text = TableLetters[ButtonCount].ToString();
-                    ButtonCount++;
-
-                    txt.color = Color.black;
-                    txt.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
-                    txt.resizeTextForBestFit = true;
-                    txt.alignment = TextAnchor.MiddleCenter;
+                    Next_Symbol.GetComponent<Text>().text = "0";
+                    ArrayFillNumbers(size, TableNumbers);
                 }
-                Y -= Button_Height;
+                else
+                {
+                    Next_Symbol.GetComponent<Text>().text = "А";
+                    ArrayFillLetters(size, TableLetters);
+                }
+
+                GameObject Table_Canvas = GameObject.Find("Table");
+                for (int i = 0; i < size; i++)
+                {
+                    for (int j = 0; j < size; j++)
+                    {
+                        var newButton = new GameObject("Button_" + ButtonCount, typeof(RectTransform));
+                        newButton.transform.SetParent(Table_Canvas.transform);
+                        newButton.layer = 5;
+                        var Button = newButton.AddComponent<Button>();
+
+                        
+                        Button.onClick.AddListener(() => Next_Symbol_Click(Button));
+
+                        var ButtonRT = Button.GetComponent<RectTransform>();
+                        ButtonRT.position = new Vector3(0f, 0f, 0f);
+                        ButtonRT.anchoredPosition = new Vector3(0f, 0f, 0f);
+                        ButtonRT.localPosition = new Vector3(X + (Button_Width * j), Y, 0f);
+                        ButtonRT.sizeDelta = new Vector2(Button_Width, Button_Height);
+                        ButtonRT.localScale = new Vector3(1f, 1f, 1f);
+                        ButtonRT.localEulerAngles = new Vector3(0f, 0f, 0f);
+
+                       
+                        
+                        newButton.AddComponent<Image>();
+
+                        var newText = new GameObject("Text", typeof(RectTransform));
+                        newText.transform.SetParent(newButton.transform);
+                        newText.layer = 5;
+
+                        var textRT = newText.GetComponent<RectTransform>();
+                        textRT.position = new Vector3(0f, 0f, 0f);
+                        textRT.anchoredPosition = new Vector3(0f, 0f, 0f);
+                        textRT.localPosition = new Vector3(0f, 0f, 0f);
+                        textRT.sizeDelta = new Vector2(Button_Width, Button_Height);
+                        textRT.localScale = new Vector3(1f, 1f, 1f);
+                        textRT.localEulerAngles = new Vector3(0f, 0f, 0f);
+
+
+                        var txt = newText.AddComponent<Text>();
+
+                        if (Type_Table.GetComponent<Dropdown>().value == 0)
+                            txt.text = TableNumbers[ButtonCount].ToString();
+                        else
+                            txt.text = TableLetters[ButtonCount].ToString();
+
+                        ButtonCount++;
+
+                        txt.color = Color.black;
+                        txt.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
+                        txt.resizeTextForBestFit = true;
+                        txt.alignment = TextAnchor.MiddleCenter;
+
+                        Button.targetGraphic = newButton.GetComponent<Image>();
+                    }
+                    Y -= Button_Height;
+                }
+            }
+            else
+            {
+                GameController.Game = false;
+                StartStop.GetComponent<Text>().text = "Start";
+            }
+            
+        }
+
+        public void Next_Symbol_Click(Button Btn)
+        {
+            if (Btn.transform.GetChild(0).GetComponent<Text>().text == Next_Symbol.GetComponent<Text>().text)
+            {
+                count_click++;
+                Btn.onClick.RemoveAllListeners();
+                if (Type_Game.GetComponent<Toggle>().isOn)              
+                    Btn.GetComponent<Button>().interactable = false;                                  
+                if (Type_Table.GetComponent<Dropdown>().value == 0)               
+                    Next_Symbol.GetComponent<Text>().text = (Convert.ToInt32(Next_Symbol.GetComponent<Text>().text) + 1).ToString();              
+                else
+                    Next_Symbol.GetComponent<Text>().text = symb_original[count_click].ToString();
+
             }
         }
 
