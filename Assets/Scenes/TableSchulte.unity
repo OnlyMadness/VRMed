@@ -2818,7 +2818,7 @@ MonoBehaviour:
   startMin: 0
   startSec: 0
   textOutput: {fileID: 985386762}
-  startAwake: 1
+  startAwake: 0
 --- !u!1 &222445819
 GameObject:
   m_ObjectHideFlags: 0

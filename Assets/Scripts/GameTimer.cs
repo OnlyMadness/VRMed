@@ -33,9 +33,23 @@ public class GameTimer : MonoBehaviour
     {
         while (true)
         {
-            if (!stop) TimeCount();
+            if (!stop)
+            {
+                TimeCount();
+            }
+            else
+            {
+                Reset();
+            }
             yield return new WaitForSeconds(1);
         }
+    }
+
+    void Reset()
+    {
+        sec = 0;
+        min = 0;
+        hour = 0;
     }
 
     void TimeCount()

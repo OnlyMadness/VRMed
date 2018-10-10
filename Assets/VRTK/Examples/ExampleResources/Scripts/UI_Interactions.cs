@@ -98,10 +98,12 @@
         }
 
         public void Start_Game() {
+
             StartStop = GameObject.Find("TextBtnStart");
             count_click = 0;
             if (!GameController.Game)
             {
+                GameTimer.stop = false;
                 GameController.Game = true;
                 StartStop.GetComponent<Text>().text = "Stop";
 
@@ -202,6 +204,7 @@
             }
             else
             {
+                GameTimer.stop = true;
                 Destroy(Table_Buttons);
                 GameController.Game = false;
                 StartStop.GetComponent<Text>().text = "Start";
