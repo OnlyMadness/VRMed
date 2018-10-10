@@ -2813,9 +2813,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverse: 0
-  timerMode: 1
-  startValue: 0
-  endValue: 90
+  counterMode: 1
+  startHour: 0
+  startMin: 0
+  startSec: 0
   textOutput: {fileID: 985386762}
   startAwake: 1
 --- !u!1 &222445819
@@ -8438,6 +8439,7 @@ MonoBehaviour:
   Type_Game: {fileID: 1228042923}
   Next_Symbol: {fileID: 1548892789}
   symb: "\u0410\u0411\u0412\u0413\u0414\u0415\u0401\u0416\u0417\u0418\u0419\u041A\u041B\u041C\u041D\u041E\u041F\u0420\u0421\u0422\u0423\u0424\u0425\u0426\u0427\u0428\u0429\u042A\u042B\u042C\u042D\u042E\u042F"
+  symb_original: "\u0410\u0411\u0412\u0413\u0414\u0415\u0401\u0416\u0417\u0418\u0419\u041A\u041B\u041C\u041D\u041E\u041F\u0420\u0421\u0422\u0423\u0424\u0425\u0426\u0427\u0428\u0429\u042A\u042B\u042C\u042D\u042E\u042F"
 --- !u!4 &912052205
 Transform:
   m_ObjectHideFlags: 0
@@ -9242,7 +9244,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0:00
+  m_Text: 00
 --- !u!222 &985386763
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15895,7 +15897,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 837
+      value: 1012
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}

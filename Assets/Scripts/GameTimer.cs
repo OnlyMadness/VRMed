@@ -6,47 +6,22 @@ public class GameTimer : MonoBehaviour
 {
 
     public static bool stop;
-    public static bool isDone;
     public static string result;
     public bool reverse;
-    public enum TimerMode { minutes = 0, seconds = 1 };
-    public TimerMode timerMode = TimerMode.minutes;
-    public int startValue;
-    public int endValue;
+    public enum CounterMode { hourMinSec = 0, minSec = 1 };
+    public CounterMode counterMode = CounterMode.hourMinSec;
+    public int startHour, startMin, startSec;
     public Text textOutput;
     public bool startAwake = true;
-    private int min, sec;
-    private string m, s;
+    private int hour, min, sec;
+    private string h, m, s;
 
     void Awake()
     {
-        isDone = false;
         if (startAwake) stop = false; else stop = true;
-        if (timerMode == TimerMode.minutes)
-        {
-            if (reverse) sec = 60;
-            min = startValue;
-        }
-        else
-        {
-            sec = startValue;
-        }
-        if (!reverse)
-        {
-            if (endValue < startValue)
-            {
-                Debug.Log("Game Timer: В этом режиме, параметр 'End Value' не может быть меньше, чем 'Start Value'");
-                stop = true;
-            }
-        }
-        else
-        {
-            if (endValue > startValue)
-            {
-                Debug.Log("Game Timer: В этом режиме, параметр 'End Value' не может быть больше, чем 'Start Value'");
-                stop = true;
-            }
-        }
+        if (startHour > 0 && startHour <= 23) hour = startHour; else startHour = 0;
+        if (startMin > 0 && startMin <= 59) min = startMin; else startMin = 0;
+        if (startSec > 0 && startSec <= 59) sec = startSec; else startSec = 0;
     }
 
     void Start()
@@ -58,7 +33,7 @@ public class GameTimer : MonoBehaviour
     {
         while (true)
         {
-            if (!stop && !isDone) TimeCount();
+            if (!stop) TimeCount();
             yield return new WaitForSeconds(1);
         }
     }
@@ -67,24 +42,19 @@ public class GameTimer : MonoBehaviour
     {
         if (reverse)
         {
-            if (timerMode == TimerMode.minutes)
+            if (sec < 0)
             {
-                if (sec < 0)
-                {
-                    sec = 59;
-                    min--;
-                }
-                if (min == endValue)
-                {
-                    isDone = true;
-                }
+                sec = 59;
+                min--;
             }
-            else
+            if (min < 0)
             {
-                if (sec == endValue)
-                {
-                    isDone = true;
-                }
+                min = 59;
+                hour--;
+            }
+            if (hour < 0)
+            {
+                hour = 23;
             }
 
             CurrentTime();
@@ -93,24 +63,19 @@ public class GameTimer : MonoBehaviour
         }
         else
         {
-            if (timerMode == TimerMode.minutes)
+            if (sec > 59)
             {
-                if (sec > 59)
-                {
-                    sec = 0;
-                    min++;
-                }
-                if (min == endValue)
-                {
-                    isDone = true;
-                }
+                sec = 0;
+                min++;
             }
-            else
+            if (min > 59)
             {
-                if (sec == endValue)
-                {
-                    isDone = true;
-                }
+                min = 0;
+                hour++;
+            }
+            if (hour > 23)
+            {
+                hour = 0;
             }
 
             CurrentTime();
@@ -123,18 +88,19 @@ public class GameTimer : MonoBehaviour
     {
         if (sec < 10) s = "0" + sec; else s = sec.ToString();
         if (min < 10) m = "0" + min; else m = min.ToString();
+        if (hour < 10) h = "0" + hour; else h = hour.ToString();
     }
 
     void OnGUI()
     {
-        switch (timerMode)
+        switch (counterMode)
         {
-            case TimerMode.minutes:
-                result = m;
+            case CounterMode.hourMinSec:
+                result = h + ":" + m + ":" + s;
                 break;
 
-            case TimerMode.seconds:
-                result = s;
+            case CounterMode.minSec:
+                result = m + ":" + s;
                 break;
         }
 
