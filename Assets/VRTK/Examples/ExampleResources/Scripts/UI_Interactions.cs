@@ -110,10 +110,10 @@
 
                 size = Convert.ToInt32(Scale_Table.GetComponent<Text>().text.Split('x')[0]);
                 int ButtonCount = 0;
-                float X = -130f;
-                float Y = 60f;
+                float X = 0;
+                float Y = 0;
 
-                float Table_Heigh = 160;
+                float Table_Heigh = 300;
                 float Table_Width = 300;
                 float Button_Height = Table_Heigh / size;
                 float Button_Width = Table_Width / size;
@@ -137,7 +137,8 @@
                 var newButtonsRT = Table_Buttons.GetComponent<RectTransform>();
                 Table_Buttons.transform.SetParent(Table_Canvas.transform);
                 Table_Buttons.layer = 5;
-
+                
+                
                 newButtonsRT.position = new Vector3(0f, 0f, 0f);
                 newButtonsRT.localScale = new Vector3(1f, 1f, 1f);
                 newButtonsRT.anchoredPosition = new Vector3(0f, 0f, 0f);
