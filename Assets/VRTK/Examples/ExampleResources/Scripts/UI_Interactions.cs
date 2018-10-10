@@ -22,6 +22,9 @@
 
         private bool Game = false;
         private int count_click;
+        private int size;
+        private GameObject Table_Buttons;
+        private GameObject StartStop;
 
         public void Button_Red()
         {
@@ -95,15 +98,15 @@
         }
 
         public void Start_Game() {
-            GameObject StartStop = GameObject.Find("TextBtnStart");
+            StartStop = GameObject.Find("TextBtnStart");
             count_click = 0;
             if (!GameController.Game)
             {
-                GameController.Game = true;   
+                GameController.Game = true;
                 StartStop.GetComponent<Text>().text = "Stop";
-                   
 
-                int size = Convert.ToInt32(Scale_Table.GetComponent<Text>().text.Split('x')[0]);
+
+                size = Convert.ToInt32(Scale_Table.GetComponent<Text>().text.Split('x')[0]);
                 int ButtonCount = 0;
                 float X = -130f;
                 float Y = 60f;
@@ -128,16 +131,29 @@
                 }
 
                 GameObject Table_Canvas = GameObject.Find("Table");
+                Table_Buttons = new GameObject("Buttons_Table", typeof(RectTransform));
+                var newButtonsRT = Table_Buttons.GetComponent<RectTransform>();
+                Table_Buttons.transform.SetParent(Table_Canvas.transform);
+                Table_Buttons.layer = 5;
+
+                newButtonsRT.position = new Vector3(0f, 0f, 0f);
+                newButtonsRT.localScale = new Vector3(1f, 1f, 1f);
+                newButtonsRT.anchoredPosition = new Vector3(0f, 0f, 0f);
+                newButtonsRT.localPosition = new Vector3(0f, 0f, 0f);
+                newButtonsRT.sizeDelta = new Vector2(300, 300);
+
+                newButtonsRT.localEulerAngles = new Vector3(0f, 0f, 0f);
+                GameObject Buttons_Table = GameObject.Find("Buttons_Table");
                 for (int i = 0; i < size; i++)
                 {
                     for (int j = 0; j < size; j++)
                     {
                         var newButton = new GameObject("Button_" + ButtonCount, typeof(RectTransform));
-                        newButton.transform.SetParent(Table_Canvas.transform);
+                        newButton.transform.SetParent(Buttons_Table.transform);
                         newButton.layer = 5;
                         var Button = newButton.AddComponent<Button>();
 
-                        
+
                         Button.onClick.AddListener(() => Next_Symbol_Click(Button));
 
                         var ButtonRT = Button.GetComponent<RectTransform>();
@@ -148,8 +164,8 @@
                         ButtonRT.localScale = new Vector3(1f, 1f, 1f);
                         ButtonRT.localEulerAngles = new Vector3(0f, 0f, 0f);
 
-                       
-                        
+
+
                         newButton.AddComponent<Image>();
 
                         var newText = new GameObject("Text", typeof(RectTransform));
@@ -186,25 +202,35 @@
             }
             else
             {
+                Destroy(Table_Buttons);
                 GameController.Game = false;
                 StartStop.GetComponent<Text>().text = "Start";
             }
-            
-        }
+        }    
+        
 
         public void Next_Symbol_Click(Button Btn)
         {
-            if (Btn.transform.GetChild(0).GetComponent<Text>().text == Next_Symbol.GetComponent<Text>().text)
+            if (count_click != size * size -1)
             {
-                count_click++;
-                Btn.onClick.RemoveAllListeners();
-                if (Type_Game.GetComponent<Toggle>().isOn)              
-                    Btn.GetComponent<Button>().interactable = false;                                  
-                if (Type_Table.GetComponent<Dropdown>().value == 0)               
-                    Next_Symbol.GetComponent<Text>().text = (Convert.ToInt32(Next_Symbol.GetComponent<Text>().text) + 1).ToString();              
-                else
-                    Next_Symbol.GetComponent<Text>().text = symb_original[count_click].ToString();
+                if (Btn.transform.GetChild(0).GetComponent<Text>().text == Next_Symbol.GetComponent<Text>().text)
+                {
+                    count_click++;
+                    Btn.onClick.RemoveAllListeners();
+                    if (Type_Game.GetComponent<Toggle>().isOn)
+                        Btn.GetComponent<Button>().interactable = false;
+                    if (Type_Table.GetComponent<Dropdown>().value == 0)
+                        Next_Symbol.GetComponent<Text>().text = (Convert.ToInt32(Next_Symbol.GetComponent<Text>().text) + 1).ToString();
+                    else
+                        Next_Symbol.GetComponent<Text>().text = symb_original[count_click].ToString();
 
+                }
+            }
+            else
+            {
+                Destroy(Table_Buttons);
+                GameController.Game = false;
+                StartStop.GetComponent<Text>().text = "Start";
             }
         }
 
