@@ -109,14 +109,20 @@
 
 
                 size = Convert.ToInt32(Scale_Table.GetComponent<Text>().text.Split('x')[0]);
+                GameObject Table_Canvas = GameObject.Find("Table");
                 int ButtonCount = 0;
-                float X = 0;
-                float Y = 0;
 
-                float Table_Heigh = 300;
-                float Table_Width = 300;
+                float Table_Heigh = Table_Canvas.GetComponent<RectTransform>().sizeDelta.y;
+                float Table_Width = Table_Canvas.GetComponent<RectTransform>().sizeDelta.x;
+
                 float Button_Height = Table_Heigh / size;
                 float Button_Width = Table_Width / size;
+
+                float X = Button_Width /2;
+                float Y = -Button_Height/2;
+
+                // float X = Table_Canvas.GetComponent<RectTransform>().position.x- Button_Width/2;
+                //  float Y = Table_Canvas.GetComponent<RectTransform>().position.y+ Button_Height/2;
 
                 int[] TableNumbers = new int[size * size];
                 string[] TableLetters = new string[size * size];
@@ -132,7 +138,7 @@
                     ArrayFillLetters(size, TableLetters);
                 }
 
-                GameObject Table_Canvas = GameObject.Find("Table");
+                
                 Table_Buttons = new GameObject("Buttons_Table", typeof(RectTransform));
                 var newButtonsRT = Table_Buttons.GetComponent<RectTransform>();
                 Table_Buttons.transform.SetParent(Table_Canvas.transform);
@@ -166,7 +172,8 @@
                         ButtonRT.sizeDelta = new Vector2(Button_Width, Button_Height);
                         ButtonRT.localScale = new Vector3(1f, 1f, 1f);
                         ButtonRT.localEulerAngles = new Vector3(0f, 0f, 0f);
-
+                        ButtonRT.anchorMin = new Vector3(0, 1);
+                        ButtonRT.anchorMax = new Vector3(0, 1);
 
 
                         newButton.AddComponent<Image>();
