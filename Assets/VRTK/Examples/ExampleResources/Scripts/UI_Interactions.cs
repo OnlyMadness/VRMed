@@ -149,7 +149,7 @@
                 newButtonsRT.localScale = new Vector3(1f, 1f, 1f);
                 newButtonsRT.anchoredPosition = new Vector3(0f, 0f, 0f);
                 newButtonsRT.localPosition = new Vector3(0f, 0f, 0f);
-                newButtonsRT.sizeDelta = new Vector2(300, 300);
+                newButtonsRT.sizeDelta = new Vector2(300, 140);
 
                 newButtonsRT.localEulerAngles = new Vector3(0f, 0f, 0f);
                 GameObject Buttons_Table = GameObject.Find("Buttons_Table");
