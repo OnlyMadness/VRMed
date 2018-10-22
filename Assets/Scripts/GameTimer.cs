@@ -14,7 +14,7 @@ public class GameTimer : MonoBehaviour
     public Text textOutput;
     public bool startAwake = true;
     private int hour, min, sec;
-    private string h, m, s;
+    private string h="0", m="00", s="00";
 
     void Awake()
     {
@@ -33,13 +33,14 @@ public class GameTimer : MonoBehaviour
     {
         while (true)
         {
-            if (!stop)
+            if (GameController.Game)
             {
                 TimeCount();
             }
             else
-            {
+            {         
                 Reset();
+                stop = true;
             }
             yield return new WaitForSeconds(1);
         }
@@ -117,7 +118,8 @@ public class GameTimer : MonoBehaviour
                 result = m + ":" + s;
                 break;
         }
-
         textOutput.text = result;
+        if(stop)
+            textOutput.text = "00:00";
     }
 }

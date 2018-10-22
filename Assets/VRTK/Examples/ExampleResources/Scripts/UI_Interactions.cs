@@ -13,12 +13,16 @@
         public GameObject Type_Table;
         public GameObject Type_Game;
         public GameObject Next_Symbol;
+        public GameObject Text_Timer;
+
+        public GameObject Text_Timer_Finish;
+        public GameObject Text_Finish;
 
         private int[] TableNumbers;
         private string[] TableLetters;
 
-        public string symb = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
-        public string symb_original = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+        public string symb = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+        public string symb_original = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя";
 
         private bool Game = false;
         private int count_click;
@@ -100,15 +104,22 @@
         public void Start_Game() {
 
             StartStop = GameObject.Find("TextBtnStart");
-            count_click = 0;
+
+            Scale_Table.GetComponent<Dropdown>().interactable = false;
+            Type_Table.GetComponent<Dropdown>().interactable = false;
+            Type_Game.GetComponent<Toggle>().interactable = false;
+
+            Text_Timer_Finish.SetActive(false);
+            Text_Finish.SetActive(false);
+
+
             if (!GameController.Game)
             {
                 GameTimer.stop = false;
                 GameController.Game = true;
                 StartStop.GetComponent<Text>().text = "Stop";
 
-
-                size = Convert.ToInt32(Scale_Table.GetComponent<Text>().text.Split('x')[0]);
+                size = Convert.ToInt32(Scale_Table.transform.GetChild(0).GetComponent<Text>().text.Split('x')[0]);
                 GameObject Table_Canvas = GameObject.Find("Table");
                 int ButtonCount = 0;
 
@@ -212,13 +223,27 @@
             }
             else
             {
-                GameTimer.stop = true;
-                Destroy(Table_Buttons);
-                GameController.Game = false;
-                StartStop.GetComponent<Text>().text = "Start";
+                Stop_Finish();
             }
-        }    
-        
+        }
+
+        private void Stop_Finish()
+        {
+            count_click = 0;
+            symb = symb_original;
+
+            //  GameTimer.stop = true;
+            //  Text_Timer.GetComponent<Text>().text = ":";
+
+            Scale_Table.GetComponent<Dropdown>().interactable = true;
+            Type_Table.GetComponent<Dropdown>().interactable = true;
+            Type_Game.GetComponent<Toggle>().interactable = true;
+
+            Next_Symbol.GetComponent<Text>().text = "";
+            Destroy(Table_Buttons);
+            GameController.Game = false;
+            StartStop.GetComponent<Text>().text = "Start";
+        }
 
         public void Next_Symbol_Click(Button Btn)
         {
@@ -239,9 +264,10 @@
             }
             else
             {
-                Destroy(Table_Buttons);
-                GameController.Game = false;
-                StartStop.GetComponent<Text>().text = "Start";
+                Text_Timer_Finish.SetActive(true);
+                Text_Finish.SetActive(true);
+                Text_Timer_Finish.GetComponent<Text>().text = GameTimer.result;
+                Stop_Finish();
             }
         }
 
