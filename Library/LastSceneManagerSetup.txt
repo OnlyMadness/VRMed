@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Images4test/Scenes/Image4test.unity
-=======
-- path: Assets/Scenes/TableSchulte.unity
->>>>>>> SchulteTable
+- path: Assets/SpaceNinja/SpaceNinja.unity
   isLoaded: 1
   isActive: 1
