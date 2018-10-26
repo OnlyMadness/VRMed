@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour {
     public GameObject[] target_Prefab;
     public bool GameMode;
     private byte WaitSec;
+    public bool SpawnMode;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class Spawner : MonoBehaviour {
     }
     IEnumerator Spawn()
     {
-        while (true) {
+        while (SpawnMode) {
             GameObject go = Instantiate(target_Prefab[Random.Range(0,target_Prefab.Length)]);
             Rigidbody temp = go.GetComponent<Rigidbody>();
             temp.velocity = new Vector3(0f,5f,5f);
