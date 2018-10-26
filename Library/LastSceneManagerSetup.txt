@@ -1,8 +1,1 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Images4test/Scenes/Image4test.unity
-=======
-- path: Assets/Scenes/TableSchulte.unity
->>>>>>> SchulteTable
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []
