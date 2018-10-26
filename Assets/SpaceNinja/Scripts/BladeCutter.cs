@@ -20,8 +20,17 @@ public class BladeCutter : MonoBehaviour {
         GameObject[] parts = BLINDED_AM_ME.MeshCut.Cut(victim, transform.position, transform.right, CutMaterial);
 
         if (!parts[1].GetComponent<Rigidbody>())
+        {
+            if(collision.collider.gameObject.tag == "Asteroid")
+                collision.collider.gameObject.GetComponent<BoxCollider>().enabled = false;
+            else
+                collision.collider.gameObject.GetComponent<SphereCollider>().enabled = false;
             parts[1].AddComponent<Rigidbody>();
-        Destroy(parts[1],1);
+            parts[1].AddComponent<AsteroidsAndPlanets>();
+            parts[1].GetComponent<Rigidbody>().mass = 100;
+            parts[1].GetComponent<Rigidbody>().angularDrag = 0;
+        }
+       // Destroy(parts[1],1);
        // collision.collider.gameObject.tag = "Untagged";
     }
 }
