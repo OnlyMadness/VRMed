@@ -5,9 +5,16 @@ using UnityEngine;
 public class Spawner : MonoBehaviour {
 
     public GameObject[] target_Prefab;
+    public bool GameMode;
+    private byte WaitSec;
 
     private void Start()
     {
+        if (GameMode == true)
+            WaitSec = 3;
+        else    
+            WaitSec = 1;      
+
         StartCoroutine(Spawn());
     }
     IEnumerator Spawn()
@@ -22,7 +29,7 @@ public class Spawner : MonoBehaviour {
             Vector3 pos = transform.position;
             pos.x += Random.Range(-1f, 1f);
             go.transform.position = pos;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(WaitSec);
         }
     }
 }

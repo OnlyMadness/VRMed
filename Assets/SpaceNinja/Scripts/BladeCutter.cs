@@ -8,11 +8,17 @@ public class BladeCutter : MonoBehaviour {
     // Use this for initialization
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.collider.gameObject.tag == "Asteroid")
+            GameControllerNinja.Score++;
+        if (collision.collider.gameObject.tag == "Planet")
+            GameControllerNinja.Score_Error++;
+        
         GameObject victim = collision.collider.gameObject;
         GameObject[] parts = BLINDED_AM_ME.MeshCut.Cut(victim, transform.position, transform.right, CutMaterial);
 
         if (!parts[1].GetComponent<Rigidbody>())
             parts[1].AddComponent<Rigidbody>();
         Destroy(parts[1],1);
+       // collision.collider.gameObject.tag = "Untagged";
     }
 }
