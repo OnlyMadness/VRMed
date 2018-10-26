@@ -14,6 +14,11 @@ public class GameControllerNinja : MonoBehaviour {
     void Start () {
 		
 	}
+
+    public static void GameStart()
+    {
+        Spawner.SpawnMode = true;
+    }
 	
 	// Update is called once per frame
 	void Update () {

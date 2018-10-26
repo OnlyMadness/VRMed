@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent (typeof(Rigidbody))]
 public class BladeCutter : MonoBehaviour {
     public Material CutMaterial;
+    
     // Use this for initialization
     void OnCollisionEnter(Collision collision)
     {
@@ -12,6 +13,8 @@ public class BladeCutter : MonoBehaviour {
             GameControllerNinja.Score++;
         if (collision.collider.gameObject.tag == "Planet")
             GameControllerNinja.Score_Error++;
+        if (collision.collider.gameObject.tag == "Start")
+            GameControllerNinja.GameStart();
         
         GameObject victim = collision.collider.gameObject;
         GameObject[] parts = BLINDED_AM_ME.MeshCut.Cut(victim, transform.position, transform.right, CutMaterial);
