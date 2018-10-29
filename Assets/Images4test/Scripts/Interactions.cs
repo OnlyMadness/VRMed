@@ -7,13 +7,20 @@
 
     public class Interactions : MonoBehaviour
     {
+
         private const int EXISTING_CANVAS_COUNT = 4;
         public GameObject TextFinish;
         public GameObject TextExplain;
+        public GameObject ButtonExplain;
         public GameObject ButtonNext;
+        public GameObject Canvas;
+        public GameObject Statistics_Canvas;
+
+        public GameObject Restart;
+
         public GameObject Image;
         public GameObject[] Buttons;
-
+        public GameObject[] Buttons_answer;
         public Sprite sprite;
 
         private int TestNumber = 1;
@@ -29,22 +36,101 @@
                 Buttons[i].SetActive(false);
             Image.SetActive(false);
             TextExplain.SetActive(true);
-            ButtonNext.SetActive(true);
+            ButtonExplain.SetActive(true);
+          //  GameObject answer_btn = (GameObject)Instantiate(Resources.Load("Answers/_0" + StatiscticsList.NumberGroupEntry));
+          //  answer_btn.transform.SetParent(Canvas.transform);
+          //  answer_btn.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
+          //  answer_btn.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+          //  answer_btn.GetComponent<RectTransform>().localEulerAngles = new Vector3(0f, 0f, 0f);
+          ////  answer_btn.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(Answer_1);
+          //  answer_btn.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(Answer_1);
+          //  answer_btn.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(Answer_2);
+          //  answer_btn.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(Answer_3);
+          //  answer_btn.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(Answer_4);
+          //  ButtonNext.SetActive(true);
+        }
+
+        public void Answer_1()
+        {
+            StatiscticsList.Image_Number[StatiscticsList.NumberGroupEntry-1] = 1;
+            StatiscticsList.Why[StatiscticsList.NumberGroupEntry-1] = GameObject.Find("Answer_1").transform.GetChild(0).GetComponent<Text>().text;
+            StatiscticsList.NumberGroupEntry++;
+            NextImage();
+        }
+        public void Answer_2()
+        {
+            StatiscticsList.Image_Number[StatiscticsList.NumberGroupEntry-1] = 2;
+            StatiscticsList.Why[StatiscticsList.NumberGroupEntry-1] = GameObject.Find("Answer_2").transform.GetChild(0).GetComponent<Text>().text;
+            StatiscticsList.NumberGroupEntry++;
+            NextImage();
+        }
+        public void Answer_3()
+        {
+            StatiscticsList.Image_Number[StatiscticsList.NumberGroupEntry-1] = 3;
+            StatiscticsList.Why[StatiscticsList.NumberGroupEntry-1] = GameObject.Find("Answer_3").transform.GetChild(0).GetComponent<Text>().text;
+            StatiscticsList.NumberGroupEntry++;
+            NextImage();
+        }
+        public void Answer_4()
+        {
+            StatiscticsList.Image_Number[StatiscticsList.NumberGroupEntry-1] = 4;
+            StatiscticsList.Why[StatiscticsList.NumberGroupEntry-1] = GameObject.Find("Answer_4").transform.GetChild(0).GetComponent<Text>().text;
+            StatiscticsList.NumberGroupEntry++;
+            NextImage();
+        }
+
+        public void Restart_Test()
+        {
+            StatiscticsList.Image_Number = new int [StatiscticsList.CountGroupImageStatic];
+            StatiscticsList.Why = new string [StatiscticsList.CountGroupImageStatic];
+            StatiscticsList.NumberGroupEntry = 1;
+            NextImage();
+            Restart.SetActive(false);
+            Statistics_Canvas.GetComponent<Canvas>().enabled = false;
+            StatiscticsList.Reset = true;
         }
 
         public void NextImage()
         {
+            ButtonExplain.SetActive(false);
             TextExplain.SetActive(false);
-            ButtonNext.SetActive(false);
-            if (TestNumber == 9)
-                TextFinish.SetActive(true);
+            switch (StatiscticsList.NumberGroupEntry)
+            {
+                case 1:
+                    for (int i = 0; i < 4; i++)
+                        Buttons_answer[i].GetComponent<Text>().text = Answers.Answer1[i];
+                    break;
+                case 2:
+                    for (int i = 0; i < 4; i++)
+                        Buttons_answer[i].GetComponent<Text>().text = Answers.Answer2[i];
+                    break;
+                case 3:
+                    for (int i = 0; i < 4; i++)
+                        Buttons_answer[i].GetComponent<Text>().text = Answers.Answer3[i];
+                    break;
+                case 10:
+                    for (int i = 0; i < 4; i++)
+                        Buttons_answer[i].GetComponent<Text>().text = Answers.Answer10[i];
+                    break;
+            }
+            // ButtonNext.SetActive(false);
+            if (StatiscticsList.NumberGroupEntry == 11)
+            {
+                Statistics_Canvas.GetComponent<Canvas>().enabled = true;
+                StatiscticsList.ShowStat = true;
+                Restart.SetActive(true);
+                //TextFinish.SetActive(true);
+            }
             else
             {
                 for (int i = 0; i < 4; i++)
                     Buttons[i].SetActive(true);
-                Image.SetActive(true);
-                TestNumber++;
-                Image.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images4test/_0" + TestNumber);
+                Image.SetActive(true);       
+                Image.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images4test/_" + StatiscticsList.NumberGroupEntry);
+           
+             //   GameObject answer_btn = (GameObject)Instantiate(Resources.Load("Answers/_0" + TestNumber));
+               // for(int i = 0; i<4;i++)
+                 //   answer_btn.transform.GetChild(i).GetComponent<Button>().onClick.AddListener(Answer_1);
                 // Image.GetComponent<Image>().sprite = sprite;
             }
         }
