@@ -14,8 +14,26 @@ public class BladeCutter : MonoBehaviour {
         if (collision.collider.gameObject.tag == "Planet")
             GameControllerNinja.Score_Error++;
         if (collision.collider.gameObject.tag == "Start")
+        {
             GameControllerNinja.GameStart();
-        
+            Destroy(collision.collider.gameObject);
+        }
+            
+        if (collision.collider.gameObject.tag == "lvl_1")
+        {
+            collision.collider.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            GameControllerNinja.lvl_game = 1;
+            Spawner.SpawnMode = true;
+            Destroy(GameObject.FindWithTag("lvl_3"));
+        }
+        if (collision.collider.gameObject.tag == "lvl_3")
+        {
+            collision.collider.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            GameControllerNinja.lvl_game = 3;
+            Spawner.SpawnMode = true;
+            Destroy(GameObject.FindWithTag("lvl_1"));
+        }
+
         GameObject victim = collision.collider.gameObject;
         GameObject[] parts = BLINDED_AM_ME.MeshCut.Cut(victim, transform.position, transform.right, CutMaterial);
 
@@ -29,6 +47,7 @@ public class BladeCutter : MonoBehaviour {
             parts[1].AddComponent<AsteroidsAndPlanets>();
             parts[1].GetComponent<Rigidbody>().mass = 100;
             parts[1].GetComponent<Rigidbody>().angularDrag = 0;
+           // parts[1].GetComponent<Rigidbody>().useGravity = true;
         }
        // Destroy(parts[1],1);
        // collision.collider.gameObject.tag = "Untagged";
