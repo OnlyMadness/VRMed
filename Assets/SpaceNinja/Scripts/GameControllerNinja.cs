@@ -26,8 +26,8 @@ public class GameControllerNinja : MonoBehaviour {
 
     public static void GameStart()
     {
-        Instantiate(Resources.Load("SpaceNinja/X1"));
-        Instantiate(Resources.Load("SpaceNinja/X3"));
+        Instantiate(Resources.Load("SpaceNinja/Light"));
+        Instantiate(Resources.Load("SpaceNinja/Hard"));
         Game = true;
         //Enable_lvl_select();
         //Spawner.SpawnMode = true;
@@ -35,7 +35,7 @@ public class GameControllerNinja : MonoBehaviour {
 
     public static void MainMenu()
     {
-        Instantiate(Resources.Load("SpaceNinja/start"));
+        Instantiate(Resources.Load("SpaceNinja/Begin"));
     }
 
     private void Reset()

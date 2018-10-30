@@ -15,6 +15,7 @@ public class BladeCutter : MonoBehaviour {
             GameControllerNinja.Score_Error++;
         if (collision.collider.gameObject.tag == "Start")
         {
+            collision.collider.gameObject.GetComponent<Rigidbody>().useGravity = true;
             GameControllerNinja.MainMenuBool = false;
             GameControllerNinja.GameStart();
             Destroy(collision.collider.gameObject);
@@ -24,13 +25,14 @@ public class BladeCutter : MonoBehaviour {
             collision.collider.gameObject.GetComponent<Rigidbody>().useGravity = true;
             GameControllerNinja.MainMenu();
             GameControllerNinja.MainMenuBool = true;
-            // Destroy(collision.collider.gameObject);
+            Destroy(collision.collider.gameObject);
         }
         if (collision.collider.gameObject.tag == "lvl_1")
         {
             collision.collider.gameObject.GetComponent<Rigidbody>().useGravity = true;
             GameControllerNinja.lvl_game = 1;
             Spawner.SpawnMode = true;
+            Destroy(collision.collider.gameObject);
             Destroy(GameObject.FindWithTag("lvl_3"));
         }
         if (collision.collider.gameObject.tag == "lvl_3")
@@ -38,7 +40,17 @@ public class BladeCutter : MonoBehaviour {
             collision.collider.gameObject.GetComponent<Rigidbody>().useGravity = true;
             GameControllerNinja.lvl_game = 3;
             Spawner.SpawnMode = true;
+            Destroy(collision.collider.gameObject);
             Destroy(GameObject.FindWithTag("lvl_1"));
+        }
+
+        if(collision.collider.gameObject.tag == "Asteroid")
+        {
+            CutMaterial = collision.collider.gameObject.GetComponent<AsteroidsAndPlanets>().cut;
+        }
+        else
+        {
+            CutMaterial = Resources.Load("SpaceNinja/Cut_Victim_cap") as Material;
         }
 
         GameObject victim = collision.collider.gameObject;
