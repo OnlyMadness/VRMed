@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/SpaceNinja/SpaceNinja.unity
+  isLoaded: 0
+  isActive: 0
