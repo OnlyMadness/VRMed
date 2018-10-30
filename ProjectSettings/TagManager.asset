@@ -10,6 +10,7 @@ TagManager:
   - FPS Counter
   - lvl_1
   - lvl_3
+  - MainMenu
   layers:
   - Default
   - TransparentFX

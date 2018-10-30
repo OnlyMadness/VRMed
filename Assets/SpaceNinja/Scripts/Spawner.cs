@@ -75,6 +75,8 @@ public class Spawner : MonoBehaviour {
            //     yield return null;
         }
         StopCoroutine(Spawn());
-        GameControllerNinja.MainMenu();
+       // GameControllerNinja.MainMenu();
+        GameControllerNinja.Finish = true;
+        GameControllerNinja.Game = false;
     }
 }
