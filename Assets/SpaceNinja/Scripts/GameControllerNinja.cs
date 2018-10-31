@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,13 +22,19 @@ public class GameControllerNinja : MonoBehaviour {
     public GameObject Canvas_stats;
     // Use this for initialization
     void Start () {
-		
-	}
+       //StartCoroutine(Timer());
+    }
+
+    //IEnumerator Timer()
+    //{
+    //    yield return new WaitForSeconds(1);
+    //}
 
     public static void GameStart()
     {
-        Instantiate(Resources.Load("SpaceNinja/Light"));
-        Instantiate(Resources.Load("SpaceNinja/Hard"));
+       // Canvas_stats.GetComponent<Canvas>().enabled = false;
+        Instantiate(Resources.Load("SpaceNinja/LightButton"));
+        Instantiate(Resources.Load("SpaceNinja/HardButton"));
         Game = true;
         //Enable_lvl_select();
         //Spawner.SpawnMode = true;
@@ -35,7 +42,9 @@ public class GameControllerNinja : MonoBehaviour {
 
     public static void MainMenu()
     {
-        Instantiate(Resources.Load("SpaceNinja/Begin"));
+        Instantiate(Resources.Load("SpaceNinja/LightButton"));
+        Instantiate(Resources.Load("SpaceNinja/HardButton"));
+        Game = true;
     }
 
     private void Reset()
@@ -61,7 +70,7 @@ public class GameControllerNinja : MonoBehaviour {
                 Error_stats_finish_text.GetComponent<Text>().text = Score_Error.ToString();
                 Finish = false;
                 Reset();
-                Instantiate(Resources.Load("SpaceNinja/MainMenu"));
+                Instantiate(Resources.Load("SpaceNinja/RetryButton"));
             }
         }
         if (MainMenuBool)
