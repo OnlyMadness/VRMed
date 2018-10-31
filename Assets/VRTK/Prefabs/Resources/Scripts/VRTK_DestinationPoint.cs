@@ -55,6 +55,8 @@ namespace VRTK
         [Tooltip("Determines if the play area will be rotated to the rotation of the destination point upon the destination marker being set.")]
         public RotationTypes snapToRotation = RotationTypes.NoRotation;
 
+        public static bool EnablePlaceTeleport;
+
         public static VRTK_DestinationPoint currentDestinationPoint;
 
         /// <summary>
@@ -188,6 +190,20 @@ namespace VRTK
 
         protected virtual void Update()
         {
+            if(EnablePlaceTeleport)
+            {
+                ToggleObject(lockedCursorObject, false);
+                ToggleObject(defaultCursorObject, false);
+                ToggleObject(hoverCursorObject, true);
+                OnDestinationPointEnabled();
+            }
+            else
+            {
+                ToggleObject(lockedCursorObject, false);
+                ToggleObject(defaultCursorObject, false);
+                ToggleObject(hoverCursorObject, false);
+                OnDestinationPointDisabled();
+            }
             if (enableTeleport != currentTeleportState)
             {
                 ResetPoint();
@@ -373,7 +389,7 @@ namespace VRTK
         {
             ToggleObject(lockedCursorObject, false);
             ToggleObject(defaultCursorObject, false);
-            ToggleObject(hoverCursorObject, true);
+            ToggleObject(hoverCursorObject, true);            
             OnDestinationPointEnabled();
         }
 
@@ -382,7 +398,7 @@ namespace VRTK
             pointCollider.enabled = false;
             ToggleObject(lockedCursorObject, false);
             ToggleObject(defaultCursorObject, false);
-            ToggleObject(hoverCursorObject, false);
+            ToggleObject(hoverCursorObject, false);        
             OnDestinationPointDisabled();
         }
 
@@ -427,7 +443,7 @@ namespace VRTK
             }
 
             float offset = (snapToRotation == RotationTypes.RotateWithHeadsetOffset && playArea != null && headset != null ? playArea.eulerAngles.y - headset.eulerAngles.y : 0f);
-            return Quaternion.Euler(0f, destinationLocation.localEulerAngles.y + offset, 0f);
+            return  Quaternion.Euler(0f, destinationLocation.localEulerAngles.y + offset, 0f);
         }
     }
 }

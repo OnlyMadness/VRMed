@@ -636,9 +636,10 @@ namespace VRTK
         }
 
         public virtual void OnTouchpadPressed(ControllerInteractionEventArgs e)
-        {
+        {          
             if (TouchpadPressed != null)
             {
+                VRTK_DestinationPoint.EnablePlaceTeleport = true;
                 TouchpadPressed(this, e);
             }
         }
@@ -647,6 +648,7 @@ namespace VRTK
         {
             if (TouchpadReleased != null)
             {
+                VRTK_DestinationPoint.EnablePlaceTeleport = false;
                 TouchpadReleased(this, e);
             }
         }
@@ -1902,6 +1904,7 @@ namespace VRTK
 
             if (touchpadPressed)
             {
+                VRTK_DestinationPoint.EnablePlaceTeleport = true;
                 OnTouchpadReleased(SetControllerEvent(ref touchpadPressed, false, 0f));
                 EmitAlias(ButtonAlias.TouchpadPress, false, 0f, ref touchpadPressed);
             }
