@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
+<<<<<<< HEAD
   productGUID: 138ecbea048ac754f868beb010d274a7
+=======
+  productGUID: 820c38fd604b989469849b2f86731369
+>>>>>>> SpaceNinja
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -651,7 +655,11 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled: {}
+<<<<<<< HEAD
   facebookSdkVersion: 
+=======
+  facebookSdkVersion: 7.9.4
+>>>>>>> SpaceNinja
   apiCompatibilityLevel: 2
   cloudProjectId: 
   projectName: 
