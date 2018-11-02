@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/TableSchulte.unity
-=======
-- path: Assets/FindObject/Scenes/FindObjects.unity
->>>>>>> SpaceNinja
   isLoaded: 1
   isActive: 1
