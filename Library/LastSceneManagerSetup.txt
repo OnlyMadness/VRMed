@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/TableSchulte.unity
+=======
+- path: Assets/FindObject/Scenes/FindObjects.unity
+>>>>>>> 7b1e129c87a2b033bda468873a0b0ca636a122a2
   isLoaded: 1
   isActive: 1
