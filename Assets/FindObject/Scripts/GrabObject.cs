@@ -4,9 +4,8 @@
 
     public class GrabObject : VRTK_InteractableObject
     {
-        private GameObject bullet;
-        private float bulletSpeed = 1000f;
-        private float bulletLife = 5f;
+       // private GameObject bullet;
+        public bool Founded; 
 
         public override void StartUsing(VRTK_InteractUse usingObject)
         {
@@ -20,13 +19,6 @@
            // bullet.SetActive(false);
         }
 
-        private void FireBullet()
-        {
-            GameObject bulletClone = Instantiate(bullet, bullet.transform.position, bullet.transform.rotation) as GameObject;
-            bulletClone.SetActive(true);
-            Rigidbody rb = bulletClone.GetComponent<Rigidbody>();
-            rb.AddForce(-bullet.transform.forward * bulletSpeed);
-            Destroy(bulletClone, bulletLife);
-        }
+       
     }
 }
