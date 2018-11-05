@@ -38,29 +38,13 @@ public class GameControllerFindObjects : MonoBehaviour {
         }
         if(Founded_Green ==  6 || Founded_Circles == 5)
         {
-<<<<<<< HEAD
-            Invoke("Finish", 3);
-=======
             Invoke("Finish",3f);
->>>>>>> e1f703b99734650c8ca62b3daa7b53bcd1f8eb16
             //Finish();           
         }
     }
 
     private void Finish()
     {
-<<<<<<< HEAD
-        for(int i = 0; i < 5;i++)
-            CircleObjects.transform.GetChild(i).GetComponent<GrabObject>().Founded = false;
-        for (int i = 0; i < 6; i++)
-            GreenObjects.transform.GetChild(i).GetComponent<GrabObject>().Founded = false;
-        GreenObjects.SetActive(true);
-        CircleObjects.SetActive(true);
-        CanvasSelectTypeObjects.SetActive(true);
-        Founded_Green = 0;
-        Founded_Circles = 0;
-// отключить поинтер
-=======
         Application.LoadLevel(Application.loadedLevel);
         //for(int i = 0; i<5;i++)
         //    CircleObjects.transform.GetChild(i).GetComponent<GrabObject>().Founded = false;
@@ -73,7 +57,6 @@ public class GameControllerFindObjects : MonoBehaviour {
         //Founded_Circles = 0;
         //RightController.GetComponent<VRTK_Pointer>().enabled = false;
         //LeftController.GetComponent<VRTK_Pointer>().enabled = false;
->>>>>>> e1f703b99734650c8ca62b3daa7b53bcd1f8eb16
     }
 
     public void StartGame()
