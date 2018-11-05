@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using VRTK;
 using VRTK.Examples;
 
 public class GameControllerFindObjects : MonoBehaviour {
@@ -36,23 +38,25 @@ public class GameControllerFindObjects : MonoBehaviour {
         }
         if(Founded_Green ==  6 || Founded_Circles == 5)
         {
-            Invoke("Finish()",3f);
+            Invoke("Finish",3f);
             //Finish();           
         }
     }
 
     private void Finish()
     {
-        for(int i = 0; i<5;i++)
-            CircleObjects.transform.GetChild(i).GetComponent<GrabObject>().Founded = false;
-        for (int i = 0; i < 5; i++)
-            GreenObjects.transform.GetChild(i).GetComponent<GrabObject>().Founded = false;
-        GreenObjects.SetActive(true);
-        CircleObjects.SetActive(true);
-        CanvasSelectTypeObjects.SetActive(true);
-        Founded_Green = 0;
-        Founded_Circles = 0;
-// отключить поинтер
+        Application.LoadLevel(Application.loadedLevel);
+        //for(int i = 0; i<5;i++)
+        //    CircleObjects.transform.GetChild(i).GetComponent<GrabObject>().Founded = false;
+        //for (int i = 0; i < 5; i++)
+        //    GreenObjects.transform.GetChild(i).GetComponent<GrabObject>().Founded = false;
+        //GreenObjects.SetActive(true);
+        //CircleObjects.SetActive(true);
+        //CanvasSelectTypeObjects.SetActive(true);
+        //Founded_Green = 0;
+        //Founded_Circles = 0;
+        //RightController.GetComponent<VRTK_Pointer>().enabled = false;
+        //LeftController.GetComponent<VRTK_Pointer>().enabled = false;
     }
 
     public void StartGame()

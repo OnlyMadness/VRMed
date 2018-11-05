@@ -19,6 +19,10 @@ namespace VRTK.GrabAttachMechanics
         public GameObject GreenObjects;
         public GameObject CircleObjects;
         public GameObject Canvas_Select_Type_Objects;
+
+        public GameObject RightController;
+        public GameObject LeftController;
+
         protected override void CreateJoint(GameObject obj)
         {
             if (obj.name == "Legal_pad_Green")
@@ -26,7 +30,7 @@ namespace VRTK.GrabAttachMechanics
                 Debug.Log("Green");
                 CircleObjects.SetActive(false);
                 GameControllerFindObjects.TypeObjects = "Green";
-                GameControllerFindObjects.StartGameBool = true;
+               // GameControllerFindObjects.StartGameBool = true;
                 Canvas_Select_Type_Objects.SetActive(false);
                 OnPointer();
                 return;
@@ -36,7 +40,7 @@ namespace VRTK.GrabAttachMechanics
                 Canvas_Select_Type_Objects.SetActive(false);
                 GreenObjects.SetActive(false);
                 Debug.Log("Circle");
-                GameControllerFindObjects.StartGameBool = true;
+               // GameControllerFindObjects.StartGameBool = true;
                 GameControllerFindObjects.TypeObjects = "Circle";
                 OnPointer();
                 return;
@@ -56,7 +60,8 @@ namespace VRTK.GrabAttachMechanics
 
         private void OnPointer()
         {
-           //Включить поинтер
+            RightController.GetComponent<VRTK_Pointer>().enabled = true;
+            LeftController.GetComponent<VRTK_Pointer>().enabled = true;
         }
     }
 }
