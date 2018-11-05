@@ -36,16 +36,16 @@ public class GameControllerFindObjects : MonoBehaviour {
         }
         if(Founded_Green ==  6 || Founded_Circles == 5)
         {
-            Invoke("Finish()",3f);
+            Invoke("Finish", 3);
             //Finish();           
         }
     }
 
     private void Finish()
     {
-        for(int i = 0; i<5;i++)
+        for(int i = 0; i < 5;i++)
             CircleObjects.transform.GetChild(i).GetComponent<GrabObject>().Founded = false;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 6; i++)
             GreenObjects.transform.GetChild(i).GetComponent<GrabObject>().Founded = false;
         GreenObjects.SetActive(true);
         CircleObjects.SetActive(true);

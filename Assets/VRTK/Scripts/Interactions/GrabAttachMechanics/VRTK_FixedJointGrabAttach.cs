@@ -27,13 +27,20 @@ namespace VRTK.GrabAttachMechanics
                 CircleObjects.SetActive(false);
                 GameControllerFindObjects.TypeObjects = "Green";
                 GameControllerFindObjects.StartGameBool = true;
-                Canvas_Select_Type_Objects.SetActive(false);
+
+                Canvas_Select_Type_Objects.GetComponent<VRTK_UICanvas>().enabled = false;
+                Canvas_Select_Type_Objects.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
+                Canvas_Select_Type_Objects.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
+
                 OnPointer();
                 return;
             }
             if (obj.name == "Soccer Ball_Circle")
             {
-                Canvas_Select_Type_Objects.SetActive(false);
+                Canvas_Select_Type_Objects.GetComponent<VRTK_UICanvas>().enabled = false;
+                Canvas_Select_Type_Objects.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
+                Canvas_Select_Type_Objects.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
+
                 GreenObjects.SetActive(false);
                 Debug.Log("Circle");
                 GameControllerFindObjects.StartGameBool = true;
