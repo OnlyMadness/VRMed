@@ -16,64 +16,11 @@ namespace VRTK.GrabAttachMechanics
     {
         [Tooltip("Maximum force the joint can withstand before breaking. Infinity means unbreakable.")]
         public float breakForce = 1500f;
-        public GameObject GreenObjects;
-        public GameObject CircleObjects;
-        public GameObject Canvas_Select_Type_Objects;
-
-        public GameObject RightController;
-        public GameObject LeftController;
-
         protected override void CreateJoint(GameObject obj)
-        {
-            if (obj.name == "Legal_pad_Green")
-            {
-                Debug.Log("Green");
-                CircleObjects.SetActive(false);
-                GameControllerFindObjects.TypeObjects = "Green";
-<<<<<<< HEAD
-                GameControllerFindObjects.StartGameBool = true;
-
-                Canvas_Select_Type_Objects.GetComponent<VRTK_UICanvas>().enabled = false;
-                Canvas_Select_Type_Objects.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
-                Canvas_Select_Type_Objects.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
-
-=======
-               // GameControllerFindObjects.StartGameBool = true;
-                Canvas_Select_Type_Objects.SetActive(false);
->>>>>>> e1f703b99734650c8ca62b3daa7b53bcd1f8eb16
-                OnPointer();
-                return;
-            }
-            if (obj.name == "Soccer Ball_Circle")
-            {
-                Canvas_Select_Type_Objects.GetComponent<VRTK_UICanvas>().enabled = false;
-                Canvas_Select_Type_Objects.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
-                Canvas_Select_Type_Objects.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
-
-                GreenObjects.SetActive(false);
-                Debug.Log("Circle");
-               // GameControllerFindObjects.StartGameBool = true;
-                GameControllerFindObjects.TypeObjects = "Circle";
-                OnPointer();
-                return;
-            }
-            if (obj.GetComponent<GrabObject>().Founded == false)
-            {
-                obj.GetComponent<GrabObject>().Founded = true;
-                if (obj.transform.parent.gameObject.name == "Circle Objects")
-                    GameControllerFindObjects.Founded_Circles++;
-                if (obj.transform.parent.gameObject.name == "Green Objects")
-                    GameControllerFindObjects.Founded_Green++;
-            }
+        {        
             givenJoint = obj.AddComponent<FixedJoint>();
             givenJoint.breakForce = (grabbedObjectScript.IsDroppable() ? breakForce : Mathf.Infinity);
             base.CreateJoint(obj);
-        }
-
-        private void OnPointer()
-        {
-            RightController.GetComponent<VRTK_Pointer>().enabled = true;
-            LeftController.GetComponent<VRTK_Pointer>().enabled = true;
         }
     }
 }
