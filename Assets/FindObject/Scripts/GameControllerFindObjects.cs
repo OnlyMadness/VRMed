@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using VRTK.Examples;
 
 public class GameControllerFindObjects : MonoBehaviour {
     public static int Founded_Circles;
@@ -9,6 +11,13 @@ public class GameControllerFindObjects : MonoBehaviour {
     public static string TypeObjects;
     public GameObject FoundedText;
     public static bool StartGameBool;
+
+    public GameObject GreenObjects;
+    public GameObject CircleObjects;
+    public GameObject CanvasSelectTypeObjects;
+
+    public GameObject RightController;
+    public GameObject LeftController;
     private void Start()
     {
         Founded_Circles = 0;
@@ -25,7 +34,27 @@ public class GameControllerFindObjects : MonoBehaviour {
             StartGame();
             StartGameBool = false;
         }
+        if(Founded_Green ==  6 || Founded_Circles == 5)
+        {
+            Invoke("Finish()",3f);
+            //Finish();           
+        }
     }
+
+    private void Finish()
+    {
+        for(int i = 0; i<5;i++)
+            CircleObjects.transform.GetChild(i).GetComponent<GrabObject>().Founded = false;
+        for (int i = 0; i < 5; i++)
+            GreenObjects.transform.GetChild(i).GetComponent<GrabObject>().Founded = false;
+        GreenObjects.SetActive(true);
+        CircleObjects.SetActive(true);
+        CanvasSelectTypeObjects.SetActive(true);
+        Founded_Green = 0;
+        Founded_Circles = 0;
+// отключить поинтер
+    }
+
     public void StartGame()
     {
 
