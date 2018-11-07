@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour {
         if (SpawnMode == true)
         {
             StartCoroutine(Spawn());
-            CountAster = 6 / GameControllerNinja.lvl_game / 2;
+            CountAster = 90 / GameControllerNinja.lvl_game / 2;
             CountPlanet = CountAster;
         }
     }
@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour {
     {
         if (SpawnMode == true)
         {
-            CountAster = 6 / GameControllerNinja.lvl_game / 2;
+            CountAster = 90 / GameControllerNinja.lvl_game / 2;
             CountPlanet = CountAster;
             StartCoroutine(Spawn());
             SpawnMode = false;
@@ -62,7 +62,7 @@ public class Spawner : MonoBehaviour {
                 }
                 GameObject go = Instantiate(target_Prefab[select_prefab]);
                 Rigidbody temp = go.GetComponent<Rigidbody>();
-                temp.velocity = new Vector3(0f, 5f, 5f);
+                temp.velocity = new Vector3(0f, 6.2f, 5f);
                 temp.angularVelocity = new Vector3(Random.Range(-5f, 5f), 0f, Random.Range(-5f, 5f));
                 temp.useGravity = true;
 

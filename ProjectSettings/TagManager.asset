@@ -11,6 +11,8 @@ TagManager:
   - lvl_1
   - lvl_3
   - MainMenu
+  - ExcludeTeleport
+  - MainMainMenu
   layers:
   - Default
   - TransparentFX

@@ -14,14 +14,17 @@ public class GameControllerNinja : MonoBehaviour {
     public static int Score;
     public static int Score_Error;
 
-    public GameObject Score_text;
-    public GameObject Score_Error_text;
+   // public GameObject Score_text;
+   // public GameObject Score_Error_text;
 
     public GameObject Score_stats_finish_text;
     public GameObject Error_stats_finish_text;
     public GameObject Canvas_stats;
+    public GameObject InfoCanvas;
+    public static GameObject InfoCanvasStatic;
     // Use this for initialization
     void Start () {
+        InfoCanvasStatic = InfoCanvas;
        //StartCoroutine(Timer());
     }
 
@@ -33,9 +36,11 @@ public class GameControllerNinja : MonoBehaviour {
     public static void GameStart()
     {
        // Canvas_stats.GetComponent<Canvas>().enabled = false;
+        
         Instantiate(Resources.Load("SpaceNinja/LightButton"));
         Instantiate(Resources.Load("SpaceNinja/HardButton"));
         Game = true;
+        InfoCanvasStatic.SetActive(false);
         //Enable_lvl_select();
         //Spawner.SpawnMode = true;
     }
@@ -51,29 +56,40 @@ public class GameControllerNinja : MonoBehaviour {
     {
         Score = 0;
         Score_Error = 0;
-        Score_text.GetComponent<Text>().text = Score.ToString();
-        Score_Error_text.GetComponent<Text>().text = Score_Error.ToString();
+      //  Score_text.GetComponent<Text>().text = Score.ToString();
+      //  Score_Error_text.GetComponent<Text>().text = Score_Error.ToString();
     }
     // Update is called once per frame
     void Update () {
         if (Game)
         {
-            Score_text.GetComponent<Text>().text = Score.ToString();
-            Score_Error_text.GetComponent<Text>().text = Score_Error.ToString();
+           // Score_text.GetComponent<Text>().text = Score.ToString();
+           // Score_Error_text.GetComponent<Text>().text = Score_Error.ToString();
         }
         else
         {
             if (Finish)
-            {            
-                Canvas_stats.GetComponent<Canvas>().enabled = true;
+            {
+                Canvas_stats.SetActive(true);
+                if (GameControllerNinja.lvl_game == 3)
+                {
+                    Canvas_stats.transform.GetChild(4).GetComponent<Text>().text = "/15";
+                    Canvas_stats.transform.GetChild(5).GetComponent<Text>().text = "/15";
+                }
+                else
+                {
+                    Canvas_stats.transform.GetChild(4).GetComponent<Text>().text = "/45";
+                    Canvas_stats.transform.GetChild(5).GetComponent<Text>().text = "/45";
+                }
                 Score_stats_finish_text.GetComponent<Text>().text = Score.ToString();
                 Error_stats_finish_text.GetComponent<Text>().text = Score_Error.ToString();
                 Finish = false;
                 Reset();
                 Instantiate(Resources.Load("SpaceNinja/RetryButton"));
+                Instantiate(Resources.Load("SpaceNinja/MenuButton"));
             }
         }
-        if (MainMenuBool)
-            Canvas_stats.GetComponent<Canvas>().enabled = false;
+        if (MainMenuBool) 
+            Canvas_stats.SetActive(false);
     }
 }

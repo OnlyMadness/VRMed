@@ -47,7 +47,11 @@ namespace VRTK.GrabAttachMechanics
                 OnPointer();
                 return;
             }
-            if (obj.GetComponent<GrabObject>().Founded == false)
+            if (obj.name == "MenuButton")
+            {
+                Application.LoadLevel(0);
+            }
+                if (obj.GetComponent<GrabObject>().Founded == false)
             {
                 obj.GetComponent<GrabObject>().Founded = true;
                 if (obj.transform.parent.gameObject.name == "Circle Objects")

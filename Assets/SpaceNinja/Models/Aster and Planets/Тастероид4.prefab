@@ -93,7 +93,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111039888549396}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -125,3 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cut: {fileID: 2100000, guid: 79234e59d292be04c8bb3465f0788e4c, type: 2}
+  OnCut: 0
+  Velocity: 0
