@@ -25,6 +25,12 @@
 
         private int TestNumber = 1;
 
+        private void OnDisable()
+        {
+            Restart_Test();
+        }
+        
+
         public void Button_Red()
         {
             VRTK_Logger.Info("Red Button Clicked");
@@ -37,17 +43,6 @@
             Image.SetActive(false);
             TextExplain.SetActive(true);
             ButtonExplain.SetActive(true);
-          //  GameObject answer_btn = (GameObject)Instantiate(Resources.Load("Answers/_0" + StatiscticsList.NumberGroupEntry));
-          //  answer_btn.transform.SetParent(Canvas.transform);
-          //  answer_btn.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
-          //  answer_btn.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-          //  answer_btn.GetComponent<RectTransform>().localEulerAngles = new Vector3(0f, 0f, 0f);
-          ////  answer_btn.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(Answer_1);
-          //  answer_btn.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(Answer_1);
-          //  answer_btn.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(Answer_2);
-          //  answer_btn.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(Answer_3);
-          //  answer_btn.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(Answer_4);
-          //  ButtonNext.SetActive(true);
         }
 
         public void Answer_1()
@@ -81,13 +76,15 @@
 
         public void Restart_Test()
         {
+            StatiscticsList.Reset = true;
             StatiscticsList.Image_Number = new int [StatiscticsList.CountGroupImageStatic];
             StatiscticsList.Why = new string [StatiscticsList.CountGroupImageStatic];
+            StatiscticsList.deleteTable = StatiscticsList.NumberGroupEntry;
             StatiscticsList.NumberGroupEntry = 1;
             NextImage();
             Restart.SetActive(false);
             Statistics_Canvas.GetComponent<Canvas>().enabled = false;
-            StatiscticsList.Reset = true;
+
         }
 
         public void NextImage()
@@ -108,18 +105,40 @@
                     for (int i = 0; i < 4; i++)
                         Buttons_answer[i].GetComponent<Text>().text = Answers.Answer3[i];
                     break;
+                case 4:
+                    for (int i = 0; i < 4; i++)
+                        Buttons_answer[i].GetComponent<Text>().text = Answers.Answer4[i];
+                    break;
+                case 5:
+                    for (int i = 0; i < 4; i++)
+                        Buttons_answer[i].GetComponent<Text>().text = Answers.Answer5[i];
+                    break;
+                case 6:
+                    for (int i = 0; i < 4; i++)
+                        Buttons_answer[i].GetComponent<Text>().text = Answers.Answer6[i];
+                    break;
+                case 7:
+                    for (int i = 0; i < 4; i++)
+                        Buttons_answer[i].GetComponent<Text>().text = Answers.Answer7[i];
+                    break;
+                case 8:
+                    for (int i = 0; i < 4; i++)
+                        Buttons_answer[i].GetComponent<Text>().text = Answers.Answer8[i];
+                    break;
+                case 9:
+                    for (int i = 0; i < 4; i++)
+                        Buttons_answer[i].GetComponent<Text>().text = Answers.Answer9[i];
+                    break;
                 case 10:
                     for (int i = 0; i < 4; i++)
                         Buttons_answer[i].GetComponent<Text>().text = Answers.Answer10[i];
                     break;
             }
-            // ButtonNext.SetActive(false);
             if (StatiscticsList.NumberGroupEntry == 11)
             {
                 Statistics_Canvas.GetComponent<Canvas>().enabled = true;
                 StatiscticsList.ShowStat = true;
-                Restart.SetActive(true);
-                //TextFinish.SetActive(true);
+                //Restart.SetActive(true);
             }
             else
             {
@@ -127,11 +146,6 @@
                     Buttons[i].SetActive(true);
                 Image.SetActive(true);       
                 Image.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images4test/_" + StatiscticsList.NumberGroupEntry);
-           
-             //   GameObject answer_btn = (GameObject)Instantiate(Resources.Load("Answers/_0" + TestNumber));
-               // for(int i = 0; i<4;i++)
-                 //   answer_btn.transform.GetChild(i).GetComponent<Button>().onClick.AddListener(Answer_1);
-                // Image.GetComponent<Image>().sprite = sprite;
             }
         }
 

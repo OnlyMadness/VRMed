@@ -33,11 +33,9 @@ public class GameTimer : MonoBehaviour
     {
         while (true)
         {
-            if (GameController.Game || GameControllerFindObjects.StartGameBool)
-            //if (true)
+            if (GameController.Game)
             {
                 TimeCount();
-                Debug.Log("asd");
             }
             else
             {         
@@ -121,7 +119,7 @@ public class GameTimer : MonoBehaviour
                 break;
         }
         textOutput.text = result;
-       // if(stop)
-        //    textOutput.text = "00:00";
+        if(stop)
+            textOutput.text = "00:00";
     }
 }

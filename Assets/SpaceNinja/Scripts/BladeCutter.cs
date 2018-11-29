@@ -65,7 +65,7 @@ public class BladeCutter : MonoBehaviour {
                 collision.collider.gameObject.GetComponent<BoxCollider>().enabled = false;
             if (collision.collider.gameObject.tag == "Planet")
                 collision.collider.gameObject.GetComponent<SphereCollider>().enabled = false;             
-            if ((collision.collider.gameObject.tag == "Start") || (collision.collider.gameObject.tag == "lvl_1") || (collision.collider.gameObject.tag == "lvl_3") || (collision.collider.gameObject.tag == "MainMenu") || (collision.collider.gameObject.tag == "MainMainMenu"))
+            if ((collision.collider.gameObject.tag == "Start") || (collision.collider.gameObject.tag == "lvl_1") || (collision.collider.gameObject.tag == "lvl_3") || (collision.collider.gameObject.tag == "MainMenu"))
             {
                 //  Destroy(collision.collider.gameObject.GetComponent<Rigidbody>());
              //   collision.collider.gameObject.GetComponent<Rigidbody>().useGravity = true;

@@ -13,6 +13,12 @@ TagManager:
   - MainMenu
   - ExcludeTeleport
   - MainMainMenu
+  - Finger
+  - Terminal
+  - Terminal_Hand_Trigger
+  - MiniGame_DragObject
+  - StartSchulte
+  - ButtonsSchulte
   layers:
   - Default
   - TransparentFX
@@ -44,9 +50,12 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Teminal
   - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 439454819
     locked: 0

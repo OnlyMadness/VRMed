@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: f85cf095ec9893943b90698168413b94
+timeCreated: 1498387754
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Gotham SSm
+  fontNames:
+  - Gotham SSm
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4b8448c08c7093846ab555d00b089383, type: 3}
+  - {fileID: 12800000, guid: aa8420d02327cad4b959312d7188e4fe, type: 3}
+  - {fileID: 12800000, guid: 4d5cbf02638dfd84882fd1240c872fe9, type: 3}
+  - {fileID: 12800000, guid: d34579b27eea8d44092be282dba0e45b, type: 3}
+  - {fileID: 12800000, guid: 47b3d5d54b163484abe4bc218fe4998c, type: 3}
+  - {fileID: 12800000, guid: 0fb0c278bfa282b4ea39b1843de0c8ca, type: 3}
+  - {fileID: 12800000, guid: 7fae23a82e6948b4ebd19d7a7e237449, type: 3}
+  - {fileID: 12800000, guid: f531a05b6def0154c9c1abc7a1a7e99e, type: 3}
+  - {fileID: 12800000, guid: 6c1a1cac78f386048bc8e265394db3e4, type: 3}
+  - {fileID: 12800000, guid: 6824d74e1e4e49a48b27a2fab7736bc0, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

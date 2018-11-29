@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour {
         if (SpawnMode == true)
         {
             StartCoroutine(Spawn());
-            CountAster = 90 / GameControllerNinja.lvl_game / 2;
+            CountAster = 6 / GameControllerNinja.lvl_game / 2;
             CountPlanet = CountAster;
         }
     }
@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour {
     {
         if (SpawnMode == true)
         {
-            CountAster = 90 / GameControllerNinja.lvl_game / 2;
+            CountAster = 6 / GameControllerNinja.lvl_game / 2;
             CountPlanet = CountAster;
             StartCoroutine(Spawn());
             SpawnMode = false;

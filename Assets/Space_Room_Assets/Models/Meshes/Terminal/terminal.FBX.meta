@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 67c9d4922d564b742a5929cc3e0b1050
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: terminal_001
+    100004: terminal_001 1
+    100006: terminal_003
+    100008: terminal_004
+    100010: terminal_leg001
+    100012: terminal_leg002
+    100014: terminal_Screen
+    100016: terminal_Screen001
+    100018: terminal_leg003
+    100020: terminal_leg004
+    100022: terminal_leg005
+    400000: //RootNode
+    400002: terminal_001
+    400004: terminal_001 1
+    400006: terminal_003
+    400008: terminal_004
+    400010: terminal_leg001
+    400012: terminal_leg002
+    400014: terminal_Screen
+    400016: terminal_Screen001
+    400018: terminal_leg003
+    400020: terminal_leg004
+    400022: terminal_leg005
+    2100000: Steel
+    2100002: rubber
+    2100004: Steel02
+    2100006: Terminal_screen
+    2300000: //RootNode
+    2300002: terminal_001
+    2300004: terminal_001 1
+    2300006: terminal_003
+    2300008: terminal_004
+    2300010: terminal_leg001
+    2300012: terminal_leg002
+    2300014: terminal_Screen
+    2300016: terminal_Screen001
+    2300018: terminal_leg003
+    2300020: terminal_leg004
+    2300022: terminal_leg005
+    3300000: //RootNode
+    3300002: terminal_001
+    3300004: terminal_001 1
+    3300006: terminal_003
+    3300008: terminal_004
+    3300010: terminal_leg001
+    3300012: terminal_leg002
+    3300014: terminal_Screen
+    3300016: terminal_Screen001
+    3300018: terminal_leg003
+    3300020: terminal_leg004
+    3300022: terminal_leg005
+    4300000: Terminal_nogi
+    4300002: terminal_001
+    4300004: terminal_001
+    4300006: terminal_003
+    4300008: terminal_004
+    4300010: terminal_leg002
+    4300012: terminal_leg001
+    4300014: terminal_Screen
+    4300016: terminal_Screen001
+    4300018: terminal_leg004
+    4300020: terminal_leg003
+    4300022: terminal_leg005
+    6400000: //RootNode
+    6400002: terminal_001
+    6400004: terminal_001 1
+    6400006: terminal_003
+    6400008: terminal_004
+    6400010: terminal_leg002
+    6400012: terminal_leg003
+    6400014: terminal_leg004
+    6400016: terminal_leg005
+    6400018: terminal_Screen
+    6400020: terminal_Screen001
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steel
+    second: {fileID: 2100000, guid: 6ea4e90f0c141604f8142b41f7b90818, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steel02
+    second: {fileID: 2100000, guid: 6d6cd0bf81b20984bb1b17c1f68a70dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Terminal_screen
+    second: {fileID: 2100000, guid: 8b7910c3736b15743a5d443c468f2b82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rubber
+    second: {fileID: 2100000, guid: a922cb4f2b8c10f45ba6c78791329021, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 0
+    keepQuads: 0
+    weldVertices: 0
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.001
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

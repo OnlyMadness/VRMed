@@ -8,6 +8,7 @@ public class StatiscticsList : MonoBehaviour {
     public static string[] Why;
     public static int[] Image_Number;
     public static int NumberGroupEntry = 1;
+    public static int deleteTable;
     public int CountGroupImage=10;
     public static int CountGroupImageStatic;
     public static bool ShowStat;
@@ -45,11 +46,11 @@ public class StatiscticsList : MonoBehaviour {
         }
         if (Reset)
         {
+            deleteTable = NumberGroupEntry;
             for (int i = 0; i < CountGroupImage; i++)
             {
                 DestroyImmediate(gameObject.transform.GetChild(0).gameObject);
-
-            }
+            }        
             Reset = false;
         }
 	}
