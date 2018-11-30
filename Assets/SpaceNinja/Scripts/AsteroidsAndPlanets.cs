@@ -17,11 +17,16 @@ public class AsteroidsAndPlanets : MonoBehaviour {
                 GameControllerNinja.GameStart();
                 //Destroy(collision.collider.gameObject);
             }
+            if (gameObject.tag == "MainMainMenu")
+            {
+                Application.LoadLevel(1);
+            }
             if (gameObject.tag == "MainMenu")
             {
                 //collision.collider.gameObject.GetComponent<Rigidbody>().useGravity = true;
                 GameControllerNinja.GameStart();
                 GameControllerNinja.MainMenuBool = true;
+                Destroy(GameObject.FindWithTag("MainMainMenu"));
                 //Destroy(collision.collider.gameObject);
             }
             if (gameObject.tag == "lvl_1")
@@ -32,6 +37,7 @@ public class AsteroidsAndPlanets : MonoBehaviour {
                 Spawner.SpawnMode = true;
                 //Destroy(collision.collider.gameObject);
                 Destroy(GameObject.FindWithTag("lvl_3"));
+                
             }
             if (gameObject.tag == "lvl_3")
             {
