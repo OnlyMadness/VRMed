@@ -31,6 +31,7 @@ namespace VRTK.GrabAttachMechanics
                 Canvas_Select_Type_Objects.transform.Find("Panel").transform.Find("Start").gameObject.SetActive(false);
                 Canvas_Select_Type_Objects.transform.Find("Panel").transform.Find("Score").gameObject.SetActive(true);
                 CircleObjects.SetActive(false);
+                GameTimer.stop = false;
                 GameControllerFindObjects.TypeObjects = "Green";
                 GameControllerFindObjects.StartGameBool = true;
                 OnPointer();
@@ -42,6 +43,7 @@ namespace VRTK.GrabAttachMechanics
                 Canvas_Select_Type_Objects.transform.Find("Panel").transform.Find("Start").gameObject.SetActive(false);
                 Canvas_Select_Type_Objects.transform.Find("Panel").transform.Find("Score").gameObject.SetActive(true);
                 GreenObjects.SetActive(false);
+                GameTimer.stop = false;
                 GameControllerFindObjects.TypeObjects = "Circle";
                 GameControllerFindObjects.StartGameBool = true;
                 OnPointer();

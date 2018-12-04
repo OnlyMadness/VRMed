@@ -226,5 +226,10 @@ public class MiniGamesKeyboardSwich : MonoBehaviour {
                 _obj.SetActive(false);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Application.LoadLevel(0);          
+        }
     }
 }
