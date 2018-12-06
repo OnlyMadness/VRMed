@@ -35,12 +35,12 @@ public class Spawner : MonoBehaviour {
         {
           //  if (SpawnMode)
           //  {
-                select_prefab = Random.Range(0, target_Prefab.Length);
+                select_prefab = Random.Range(0, 11);
                 if (select_prefab <= 5)
                 {
                     if (CountAster == 0)
                     {
-                        select_prefab = Random.Range(5, target_Prefab.Length);
+                        select_prefab = Random.Range(6, 11);
                         CountPlanet--;
                     }
                     else
@@ -69,7 +69,9 @@ public class Spawner : MonoBehaviour {
                 Vector3 pos = transform.position;
                 pos.x += Random.Range(-1f, 1f);
                 go.transform.position = pos;
-                yield return new WaitForSeconds(GameControllerNinja.lvl_game);
+            Debug.Log(CountAster + "Aster");
+            Debug.Log(CountPlanet + "Planet");
+            yield return new WaitForSeconds(GameControllerNinja.lvl_game);
           //  }
           //  else
            //     yield return null;
@@ -77,6 +79,7 @@ public class Spawner : MonoBehaviour {
         StopCoroutine(Spawn());
        // GameControllerNinja.MainMenu();
         GameControllerNinja.Finish = true;
+       
         GameControllerNinja.Game = false;
     }
 }

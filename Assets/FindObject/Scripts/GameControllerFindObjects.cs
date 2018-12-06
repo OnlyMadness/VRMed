@@ -60,10 +60,4 @@ public class GameControllerFindObjects : MonoBehaviour {
         // перезапуск сцены по окончанию 
         Application.LoadLevel(Application.loadedLevel);
     }
-
-    public void StartGame()
-    {
-
-    }
-
 }
