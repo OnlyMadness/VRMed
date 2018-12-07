@@ -185,9 +185,13 @@
                         ButtonRT.localEulerAngles = new Vector3(0f, 0f, 0f);
                         ButtonRT.anchorMin = new Vector3(0, 1);
                         ButtonRT.anchorMax = new Vector3(0, 1);
+                        
 
 
                         newButton.AddComponent<Image>();
+                        var ButtonIM = Button.GetComponent<Image>();
+                        ButtonIM.color = Color.black;
+                      
 
                         var newText = new GameObject("Text", typeof(RectTransform));
                         newText.transform.SetParent(newButton.transform);
@@ -211,7 +215,7 @@
 
                         ButtonCount++;
 
-                        txt.color = Color.black;
+                        txt.color = Color.white;
                         txt.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
                         txt.resizeTextForBestFit = true;
                         txt.alignment = TextAnchor.MiddleCenter;

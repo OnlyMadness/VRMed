@@ -205,6 +205,10 @@ private void Start()
                     ButtonRT.anchorMin = new Vector3(0, 1);
                     ButtonRT.anchorMax = new Vector3(0, 1);
 
+                    newButton.AddComponent<Image>();
+                    var ButtonIM = Button.GetComponent<Image>();
+                    ButtonIM.color = Color.black;
+
                     newButton.tag = "ButtonsSchulte";
                     newButton.AddComponent<Image>();
                     newButton.AddComponent<BoxCollider>();
@@ -233,7 +237,7 @@ private void Start()
 
                     ButtonCount++;
 
-                    txt.color = Color.black;
+                    txt.color = Color.white;
                     txt.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
                     txt.resizeTextForBestFit = true;
                     txt.alignment = TextAnchor.MiddleCenter;
@@ -271,6 +275,7 @@ private void Start()
             {
                 count_click++;
                 Btn.onClick.RemoveAllListeners();
+                Btn.GetComponent<Image>().color = Color.grey;
                     Btn.GetComponent<Button>().interactable = false;
                 if (Type_Table_static == 0)
                     Next_Symbol.GetComponent<Text>().text = (Convert.ToInt32(Next_Symbol.GetComponent<Text>().text) + 1).ToString();
