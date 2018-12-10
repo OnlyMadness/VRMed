@@ -26,7 +26,7 @@ public class AsteroidsAndPlanets : MonoBehaviour {
                 //collision.collider.gameObject.GetComponent<Rigidbody>().useGravity = true;
                 GameControllerNinja.GameStart();
                 GameControllerNinja.MainMenuBool = true;
-                Destroy(GameObject.FindWithTag("MainMainMenu"));
+                /////Destroy(GameObject.FindWithTag("MainMainMenu"));
                 //Destroy(collision.collider.gameObject);
             }
             if (gameObject.tag == "lvl_1")

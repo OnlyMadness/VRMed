@@ -69,8 +69,6 @@ public class Spawner : MonoBehaviour {
                 Vector3 pos = transform.position;
                 pos.x += Random.Range(-1f, 1f);
                 go.transform.position = pos;
-            Debug.Log(CountAster + "Aster");
-            Debug.Log(CountPlanet + "Planet");
             yield return new WaitForSeconds(GameControllerNinja.lvl_game);
           //  }
           //  else

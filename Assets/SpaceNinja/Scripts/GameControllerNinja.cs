@@ -86,7 +86,7 @@ public class GameControllerNinja : MonoBehaviour {
                 Finish = false;
                 Reset();
                 Instantiate(Resources.Load("SpaceNinja/RetryButton"));
-                Instantiate(Resources.Load("SpaceNinja/MenuButton"));
+               // Instantiate(Resources.Load("SpaceNinja/MenuButton"));
             }
         }
         if (MainMenuBool) 

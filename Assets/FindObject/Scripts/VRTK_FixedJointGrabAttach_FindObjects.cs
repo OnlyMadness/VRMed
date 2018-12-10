@@ -25,51 +25,44 @@ namespace VRTK.GrabAttachMechanics
 
         protected override void CreateJoint(GameObject obj)
         {
-            if (obj.name == "Legal_pad_Green")
-            {            
-                Canvas_Select_Type_Objects.GetComponent<VRTK_UICanvas>().enabled = false;
-                Canvas_Select_Type_Objects.transform.Find("Panel").transform.Find("Start").gameObject.SetActive(false);
-                Canvas_Select_Type_Objects.transform.Find("Panel").transform.Find("Score").gameObject.SetActive(true);
-                CircleObjects.SetActive(false);
-                GameTimer.stop = false;
-                GameControllerFindObjects.TypeObjects = "Green";
-                GameControllerFindObjects.StartGameBool = true;
-                OnPointer();
+            if (obj.name == "Mystic_hammer")
+            {
+                obj.transform.SetParent(RightController.transform);
                 return;
             }
-            if (obj.name == "Soccer Ball_Circle")
-            {
-                Canvas_Select_Type_Objects.GetComponent<VRTK_UICanvas>().enabled = false;
-                Canvas_Select_Type_Objects.transform.Find("Panel").transform.Find("Start").gameObject.SetActive(false);
-                Canvas_Select_Type_Objects.transform.Find("Panel").transform.Find("Score").gameObject.SetActive(true);
-                GreenObjects.SetActive(false);
-                GameTimer.stop = false;
-                GameControllerFindObjects.TypeObjects = "Circle";
-                GameControllerFindObjects.StartGameBool = true;
-                OnPointer();
-                return;
-            }
-            if (obj.name == "MenuButton")
-            {
-                Application.LoadLevel(1);
-            }
-                if (obj.GetComponent<GrabObject>().Founded == false)
-            {
-                obj.GetComponent<GrabObject>().Founded = true;
-                if (obj.transform.parent.gameObject.name == "Circle Objects")
-                    GameControllerFindObjects.Founded_Circles++;
-                if (obj.transform.parent.gameObject.name == "Green Objects")
-                    GameControllerFindObjects.Founded_Green++;
-            }
+            //if (obj.name == "Soccer Ball_Circle")
+            //{
+            //    Canvas_Select_Type_Objects.GetComponent<VRTK_UICanvas>().enabled = false;
+            //    Canvas_Select_Type_Objects.transform.Find("Panel").transform.Find("Start").gameObject.SetActive(false);
+            //    Canvas_Select_Type_Objects.transform.Find("Panel").transform.Find("Score").gameObject.SetActive(true);
+            //    GreenObjects.SetActive(false);
+            //    GameTimer.stop = false;
+            //    GameControllerFindObjects.TypeObjects = "Circle";
+            //    GameControllerFindObjects.StartGameBool = true;
+            //    OnPointer();
+            //    return;
+            //}
+            //if (obj.name == "MenuButton")
+            //{
+            //    Application.LoadLevel(1);
+            //}
+            //    if (obj.GetComponent<GrabObject>().Founded == false)
+            //{
+            //    obj.GetComponent<GrabObject>().Founded = true;
+            //    if (obj.transform.parent.gameObject.name == "Circle Objects")
+            //        GameControllerFindObjects.Founded_Circles++;
+            //    if (obj.transform.parent.gameObject.name == "Green Objects")
+            //        GameControllerFindObjects.Founded_Green++;
+            //}
             givenJoint = obj.AddComponent<FixedJoint>();
             givenJoint.breakForce = (grabbedObjectScript.IsDroppable() ? breakForce : Mathf.Infinity);
             base.CreateJoint(obj);
         }
 
-        private void OnPointer()
-        {
-            RightController.GetComponent<VRTK_Pointer>().enabled = true;
-            LeftController.GetComponent<VRTK_Pointer>().enabled = true;
-        }
+        //private void OnPointer()
+        //{
+        //    RightController.GetComponent<VRTK_Pointer>().enabled = true;
+        //    LeftController.GetComponent<VRTK_Pointer>().enabled = true;
+        //}
     }
 }

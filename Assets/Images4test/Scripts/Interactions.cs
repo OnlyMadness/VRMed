@@ -22,6 +22,7 @@
         public GameObject[] Buttons;
         public GameObject[] Buttons_answer;
         public Sprite sprite;
+        private Color colorActiveBtn;
 
         public GameObject ApplyBtn;
         private int ApplyNumberImage;
@@ -40,16 +41,18 @@
 
         public void ChoiceImage(int i)
         {
+            Color ColorSelect = new Color32(172, 217, 255, 80);
+            Color ColorDisable = new Color32(172, 217, 255, 0);
             for (int j = 0; j < 4; j++)
-                Buttons[j].GetComponent<Image>().color = Color.white;
-            Buttons[i].GetComponent<Image>().color = Color.black;
+                Buttons[j].GetComponent<Image>().color = ColorDisable;
+            Buttons[i].GetComponent<Image>().color = ColorSelect;
+
             ApplyNumberImage = i;
             ApplyBtn.SetActive(true);
         }
 
         public void ApplyImage()
-        {
-            Debug.Log("EAEwe");
+        { 
             for (int i = 0; i < 4; i++)
                 Buttons[i].SetActive(false);
             Image.SetActive(false);

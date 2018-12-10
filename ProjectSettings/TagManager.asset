@@ -19,6 +19,8 @@ TagManager:
   - MiniGame_DragObject
   - StartSchulte
   - ButtonsSchulte
+  - Mole
+  - Hammer
   layers:
   - Default
   - TransparentFX
