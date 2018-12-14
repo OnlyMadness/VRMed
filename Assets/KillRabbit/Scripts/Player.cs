@@ -24,11 +24,12 @@ public class Player : MonoBehaviour {
                 bool gameStart = gameController.IsGameStart;
                 if (raycastHit.transform.GetComponent<Mole>() != null && gameStart) {
                     Mole mole = raycastHit.transform.GetComponent<Mole>();
-                    bool isMoleAttackable = mole.OnHit();
-                  //  hammer.Hit(mole.transform.position);
-                    if (isMoleAttackable) {
-                        score++;
-                    }
+                    //bool isMoleAttackable = mole.OnHit();
+                    //if (isMoleAttackable)
+                    //{
+                    //    score++;
+
+                    //}
                 }
 
                 if (raycastHit.transform.name.Equals("machine") && !gameStart) {

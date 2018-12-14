@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameControllerRabbit : MonoBehaviour {
    
@@ -14,6 +15,8 @@ public class GameControllerRabbit : MonoBehaviour {
     public bool IsGameStart {
         get { return gameStart; }
     }
+    public static int Score;
+    public GameObject TextScore;
     private Mole[] moles;   
     private float spawnTimer = 0f;
     private float defaultGameTime = 0f;
@@ -24,14 +27,15 @@ public class GameControllerRabbit : MonoBehaviour {
     void Start() {
         moles = moleContainer.GetComponentsInChildren<Mole>();
         defaultGameTime = gameTimer;
-        StartGame();
+       // StartGame();
     }
 
     // Update is called once per frame
     void Update() {
         if (!gameStart) {
             return;
-        }      
+        }
+        TextScore.GetComponent<Text>().text = Score.ToString();
         gameplayCountdownTimer -= Time.deltaTime;
         if (gameplayCountdownTimer <= 0f) {
             gameTimer -= Time.deltaTime;
@@ -60,5 +64,9 @@ public class GameControllerRabbit : MonoBehaviour {
         gameplayCountdownTimer = 3f;
         gameStart = true;
         hintTimer = 3f;
+    }
+    public void Menu()
+    {
+        Application.LoadLevel(1);
     }
 }

@@ -10,6 +10,7 @@ public class Mole : MonoBehaviour {
     public float disappearDuration;
     public Transform HideTransform;
     public static bool RiseMole;
+    public bool hit;
 
     private Vector3 targetPosition;
     private float disappearTimer;
@@ -33,6 +34,7 @@ public class Mole : MonoBehaviour {
     void Update() {
         disappearTimer -= Time.deltaTime;
         if (disappearTimer <= 0f) {
+            attackable = false;
             Hide();
         }
         transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * speed);
@@ -49,14 +51,15 @@ public class Mole : MonoBehaviour {
         disappearTimer = disappearDuration;
     }
 
-    public bool OnHit() {
-        if (hitSound.isPlaying) {
-            hitSound.Stop();
-        }
-        hitSound.Play();
-
-        Hide();
+    public bool OnHit() {   
         if (attackable) {
+            if (hitSound.isPlaying)
+            {
+                hitSound.Stop();
+            }
+            Hide();
+            hitSound.Play();
+            GameControllerRabbit.Score++;
             attackable = false;
             return true;
         }
@@ -69,6 +72,7 @@ public class Mole : MonoBehaviour {
             hiddenHeight,
             transform.localPosition.z
             );
+        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
     }
     void OnCollisionEnter(Collision collision)
     {
