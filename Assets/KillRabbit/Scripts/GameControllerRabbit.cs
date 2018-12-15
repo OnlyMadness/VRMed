@@ -16,18 +16,37 @@ public class GameControllerRabbit : MonoBehaviour {
         get { return gameStart; }
     }
     public static int Score;
-    public GameObject TextScore;
+
+    public GameObject TextTextScore;    // если сверхразум то можешь поменять эти гамеобджеки на один канвас
+    public GameObject TextScore;        // мне было впадлу сорe 
+    public GameObject InstructionText;  //
+    public GameObject FinishText;       // поставлю баксы где это использовалось
+    public GameObject FinishScoreText;  // upd: их все больше и больше, я уже сам задумываюсь все сделать по нормальному
+
     private Mole[] moles;   
     private float spawnTimer = 0f;
     private float defaultGameTime = 0f;
     private float hintTimer = 3f;
     private float gameplayCountdownTimer = 3f;
+    public bool GamePlay;
+
+    private void OnEnable()
+    {
+        FinishText.SetActive(false);                // $
+        FinishScoreText.SetActive(false);           // $
+        InstructionText.SetActive(true);            // $
+        TextTextScore.SetActive(false);             // $
+        TextScore.SetActive(false);                 // $
+        TextScore.GetComponent<Text>().text = "0";  // $
+        Score = 0;
+    }
 
     // Use this for initialization
     void Start() {
-        moles = moleContainer.GetComponentsInChildren<Mole>();
-        defaultGameTime = gameTimer;
-       // StartGame();
+       
+            moles = moleContainer.GetComponentsInChildren<Mole>();
+            defaultGameTime = gameTimer;
+        
     }
 
     // Update is called once per frame
@@ -35,9 +54,9 @@ public class GameControllerRabbit : MonoBehaviour {
         if (!gameStart) {
             return;
         }
-        TextScore.GetComponent<Text>().text = Score.ToString();
         gameplayCountdownTimer -= Time.deltaTime;
         if (gameplayCountdownTimer <= 0f) {
+        TextScore.GetComponent<Text>().text = Score.ToString();
             gameTimer -= Time.deltaTime;
             if (gameTimer > 0f) {
                 spawnTimer -= Time.deltaTime;
@@ -50,7 +69,14 @@ public class GameControllerRabbit : MonoBehaviour {
                     spawnTimer = spawnDuration;
                 }
             }
-            else {              
+            else {
+                FinishText.SetActive(true);                                     // $   
+                FinishScoreText.GetComponent<Text>().text = Score.ToString();   // $
+                FinishScoreText.SetActive(true);                                // $
+                TextTextScore.SetActive(false);                                  // $
+                TextScore.SetActive(false);                                      // $
+                GamePlay = true;
+
                 hintTimer -= Time.deltaTime;
                 if (hintTimer <= 0f) {
                     gameStart = false;                
@@ -60,13 +86,34 @@ public class GameControllerRabbit : MonoBehaviour {
     }
 
     public void StartGame() {
-        gameTimer = defaultGameTime;     
-        gameplayCountdownTimer = 3f;
-        gameStart = true;
-        hintTimer = 3f;
+        if (GamePlay)
+        {
+            Score = 0;
+            TextScore.GetComponent<Text>().text = "0";
+            FinishText.SetActive(false);        // $
+            FinishScoreText.SetActive(false);   // $
+            InstructionText.SetActive(false);   // $
+            TextTextScore.SetActive(true);      // $
+            TextScore.SetActive(true);          // $
+
+            gameTimer = defaultGameTime;     
+            gameplayCountdownTimer = 3f;
+            gameStart = true;
+            hintTimer = 3f;
+            GamePlay = false;
+        }
     }
     public void Menu()
     {
+        //FinishText.SetActive(false);                // $
+        //FinishScoreText.SetActive(false);           // $
+        //InstructionText.SetActive(true);            // $
+        //TextTextScore.SetActive(false);             // $
+        //TextScore.SetActive(false);                 // $
+        //TextScore.GetComponent<Text>().text = "0";  // $
+        //Score = 0;
+
         Application.LoadLevel(1);
     }
+
 }

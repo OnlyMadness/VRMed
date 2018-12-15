@@ -16,4 +16,8 @@ public class ControllerMenuMotorika : MonoBehaviour {
     {
         Application.LoadLevel(0);
     }
+    public void StartKillRabbit()
+    {
+        Application.LoadLevel(5);
+    }
 }
