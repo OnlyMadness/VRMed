@@ -488,7 +488,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 13674809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -499,11 +499,11 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
-  GreenObjects: {fileID: 0}
-  CircleObjects: {fileID: 0}
-  Canvas_Select_Type_Objects: {fileID: 0}
-  RightController: {fileID: 0}
-  LeftController: {fileID: 0}
+  GreenObjects: {fileID: 1547782056}
+  CircleObjects: {fileID: 1447972434}
+  Canvas_Select_Type_Objects: {fileID: 1697705356}
+  RightController: {fileID: 120580731}
+  LeftController: {fileID: 115554529}
 --- !u!1 &16676181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 80379733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -1490,7 +1490,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 115554529}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71b26f999cbdac8478b6c2a046256169, type: 3}
   m_Name: 
@@ -1879,7 +1879,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120580731}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71b26f999cbdac8478b6c2a046256169, type: 3}
   m_Name: 
@@ -8421,7 +8421,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 685161425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -8432,11 +8432,11 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
-  GreenObjects: {fileID: 0}
-  CircleObjects: {fileID: 0}
-  Canvas_Select_Type_Objects: {fileID: 0}
-  RightController: {fileID: 0}
-  LeftController: {fileID: 0}
+  GreenObjects: {fileID: 1547782056}
+  CircleObjects: {fileID: 1447972434}
+  Canvas_Select_Type_Objects: {fileID: 1697705356}
+  RightController: {fileID: 120580731}
+  LeftController: {fileID: 115554529}
 --- !u!1 &689147206
 GameObject:
   m_ObjectHideFlags: 0
@@ -9008,7 +9008,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 726419492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -9019,11 +9019,11 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
-  GreenObjects: {fileID: 0}
-  CircleObjects: {fileID: 0}
-  Canvas_Select_Type_Objects: {fileID: 0}
-  RightController: {fileID: 0}
-  LeftController: {fileID: 0}
+  GreenObjects: {fileID: 1547782056}
+  CircleObjects: {fileID: 1447972434}
+  Canvas_Select_Type_Objects: {fileID: 1697705356}
+  RightController: {fileID: 120580731}
+  LeftController: {fileID: 115554529}
 --- !u!1 &737620860
 GameObject:
   m_ObjectHideFlags: 0
@@ -10196,7 +10196,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 836874836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -10207,11 +10207,11 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
-  GreenObjects: {fileID: 0}
-  CircleObjects: {fileID: 0}
-  Canvas_Select_Type_Objects: {fileID: 0}
-  RightController: {fileID: 0}
-  LeftController: {fileID: 0}
+  GreenObjects: {fileID: 1547782056}
+  CircleObjects: {fileID: 1447972434}
+  Canvas_Select_Type_Objects: {fileID: 1697705356}
+  RightController: {fileID: 120580731}
+  LeftController: {fileID: 115554529}
 --- !u!4 &843846907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 463108, guid: dedfb5ee6b3a49745b85a120679a1bfd,
@@ -13948,7 +13948,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1170779874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -13959,11 +13959,11 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
-  GreenObjects: {fileID: 0}
-  CircleObjects: {fileID: 0}
-  Canvas_Select_Type_Objects: {fileID: 0}
-  RightController: {fileID: 0}
-  LeftController: {fileID: 0}
+  GreenObjects: {fileID: 1547782056}
+  CircleObjects: {fileID: 1447972434}
+  Canvas_Select_Type_Objects: {fileID: 1697705356}
+  RightController: {fileID: 120580731}
+  LeftController: {fileID: 115554529}
 --- !u!4 &1172191654 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 463108, guid: dedfb5ee6b3a49745b85a120679a1bfd,
@@ -14056,7 +14056,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1186700123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -14067,11 +14067,11 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
-  GreenObjects: {fileID: 0}
-  CircleObjects: {fileID: 0}
-  Canvas_Select_Type_Objects: {fileID: 0}
-  RightController: {fileID: 0}
-  LeftController: {fileID: 0}
+  GreenObjects: {fileID: 1547782056}
+  CircleObjects: {fileID: 1447972434}
+  Canvas_Select_Type_Objects: {fileID: 1697705356}
+  RightController: {fileID: 120580731}
+  LeftController: {fileID: 115554529}
 --- !u!114 &1186700133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14253,7 +14253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1193363487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -14264,11 +14264,11 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
-  GreenObjects: {fileID: 0}
-  CircleObjects: {fileID: 0}
-  Canvas_Select_Type_Objects: {fileID: 0}
-  RightController: {fileID: 0}
-  LeftController: {fileID: 0}
+  GreenObjects: {fileID: 1547782056}
+  CircleObjects: {fileID: 1447972434}
+  Canvas_Select_Type_Objects: {fileID: 1697705356}
+  RightController: {fileID: 120580731}
+  LeftController: {fileID: 115554529}
 --- !u!1 &1193393518
 GameObject:
   m_ObjectHideFlags: 0
@@ -14314,99 +14314,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000012354296782, guid: 5174ba385e2fcac40a9009762418e317,
     type: 2}
   m_PrefabInternal: {fileID: 1964066109}
---- !u!1001 &1234957899
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 243199714}
-    m_Modifications:
-    - target: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.326
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -152
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 23378998296507182, guid: e021e10de3675d74493da1b29884e2e2,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54385303530786202, guid: e021e10de3675d74493da1b29884e2e2,
-        type: 2}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54385303530786202, guid: e021e10de3675d74493da1b29884e2e2,
-        type: 2}
-      propertyPath: m_Drag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54385303530786202, guid: e021e10de3675d74493da1b29884e2e2,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 54385303530786202, guid: e021e10de3675d74493da1b29884e2e2,
-        type: 2}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54385303530786202, guid: e021e10de3675d74493da1b29884e2e2,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 126
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114641953681551632, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-  m_SourcePrefab: {fileID: 100100000, guid: e021e10de3675d74493da1b29884e2e2, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1001 &1235310130
 Prefab:
   m_ObjectHideFlags: 0
@@ -17626,7 +17533,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1513059345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -17637,11 +17544,11 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
-  GreenObjects: {fileID: 0}
-  CircleObjects: {fileID: 0}
-  Canvas_Select_Type_Objects: {fileID: 0}
-  RightController: {fileID: 0}
-  LeftController: {fileID: 0}
+  GreenObjects: {fileID: 1547782056}
+  CircleObjects: {fileID: 1447972434}
+  Canvas_Select_Type_Objects: {fileID: 1697705356}
+  RightController: {fileID: 120580731}
+  LeftController: {fileID: 115554529}
 --- !u!65 &1513059353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18272,16 +18179,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1602544668 stripped
+--- !u!1 &1602544668
 GameObject:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 1039218731279676, guid: e021e10de3675d74493da1b29884e2e2,
     type: 2}
-  m_PrefabInternal: {fileID: 1234957899}
---- !u!4 &1602544669 stripped
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1602544669}
+  - component: {fileID: 1602544677}
+  - component: {fileID: 1602544676}
+  - component: {fileID: 1602544675}
+  - component: {fileID: 1602544674}
+  - component: {fileID: 1602544670}
+  - component: {fileID: 1602544671}
+  - component: {fileID: 1602544672}
+  - component: {fileID: 1602544673}
+  m_Layer: 0
+  m_Name: MenuButton
+  m_TagString: MainMainMenu
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1602544669
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 4391599109993676, guid: e021e10de3675d74493da1b29884e2e2,
     type: 2}
-  m_PrefabInternal: {fileID: 1234957899}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1602544668}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.326, y: -152, z: -1.2}
+  m_LocalScale: {x: 3000, y: 3000, z: 3000}
+  m_Children: []
+  m_Father: {fileID: 243199714}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1602544670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18307,7 +18242,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1602544668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -18344,7 +18279,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 1602544671}
+  grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 1602544673}
   isUsable: 1
   holdButtonToUse: 1
@@ -18365,6 +18300,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &1602544674
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 136353230048006394, guid: e021e10de3675d74493da1b29884e2e2,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1602544668}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.01
+  m_Height: 0.042
+  m_Direction: 0
+  m_Center: {x: 0.0034999994, y: 0.000000005122273, z: -5.0426317e-16}
+--- !u!54 &1602544675
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 54385303530786202, guid: e021e10de3675d74493da1b29884e2e2,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1602544668}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!23 &1602544676
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 23378998296507182, guid: e021e10de3675d74493da1b29884e2e2,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1602544668}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: cd7040545b7a6284fbddc3fd9d7acf03, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1602544677
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 33784731458839832, guid: e021e10de3675d74493da1b29884e2e2,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1602544668}
+  m_Mesh: {fileID: 4300000, guid: 4387a77991047b24487ac3db4d058fae, type: 3}
 --- !u!1 &1605601036
 GameObject:
   m_ObjectHideFlags: 0
@@ -18527,7 +18536,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1605601036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -18538,11 +18547,11 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
-  GreenObjects: {fileID: 0}
-  CircleObjects: {fileID: 0}
-  Canvas_Select_Type_Objects: {fileID: 0}
-  RightController: {fileID: 0}
-  LeftController: {fileID: 0}
+  GreenObjects: {fileID: 1547782056}
+  CircleObjects: {fileID: 1447972434}
+  Canvas_Select_Type_Objects: {fileID: 1697705356}
+  RightController: {fileID: 120580731}
+  LeftController: {fileID: 115554529}
 --- !u!1 &1618632647
 GameObject:
   m_ObjectHideFlags: 0
@@ -20468,7 +20477,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1778543815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -20479,11 +20488,11 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
-  GreenObjects: {fileID: 0}
-  CircleObjects: {fileID: 0}
-  Canvas_Select_Type_Objects: {fileID: 0}
-  RightController: {fileID: 0}
-  LeftController: {fileID: 0}
+  GreenObjects: {fileID: 1547782056}
+  CircleObjects: {fileID: 1447972434}
+  Canvas_Select_Type_Objects: {fileID: 1697705356}
+  RightController: {fileID: 120580731}
+  LeftController: {fileID: 115554529}
 --- !u!1 &1779536374
 GameObject:
   m_ObjectHideFlags: 0
@@ -20731,7 +20740,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1790800091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -20742,11 +20751,11 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
-  GreenObjects: {fileID: 0}
-  CircleObjects: {fileID: 0}
-  Canvas_Select_Type_Objects: {fileID: 0}
-  RightController: {fileID: 0}
-  LeftController: {fileID: 0}
+  GreenObjects: {fileID: 1547782056}
+  CircleObjects: {fileID: 1447972434}
+  Canvas_Select_Type_Objects: {fileID: 1697705356}
+  RightController: {fileID: 120580731}
+  LeftController: {fileID: 115554529}
 --- !u!4 &1796099119 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 401414, guid: a7c0ca5b1925f554795cd723c81e7a44,
@@ -20882,9 +20891,9 @@ GameObject:
   - component: {fileID: 1813810497}
   - component: {fileID: 1813810498}
   - component: {fileID: 1813810493}
-  - component: {fileID: 1813810494}
   - component: {fileID: 1813810495}
   - component: {fileID: 1813810496}
+  - component: {fileID: 1813810494}
   m_Layer: 0
   m_Name: Cup1
   m_TagString: ExcludeTeleport
@@ -20931,7 +20940,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1813810491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
@@ -20942,11 +20951,11 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
-  GreenObjects: {fileID: 0}
-  CircleObjects: {fileID: 0}
-  Canvas_Select_Type_Objects: {fileID: 0}
-  RightController: {fileID: 0}
-  LeftController: {fileID: 0}
+  GreenObjects: {fileID: 1547782056}
+  CircleObjects: {fileID: 1447972434}
+  Canvas_Select_Type_Objects: {fileID: 1697705356}
+  RightController: {fileID: 120580731}
+  LeftController: {fileID: 115554529}
 --- !u!114 &1813810495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24579,7 +24588,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2141459827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26af80fe67dc1884790cd849dee22e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 719fde1b8a267bc4b89687e92ab177f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0

@@ -70,15 +70,18 @@ public class GameControllerRabbit : MonoBehaviour {
                 }
             }
             else {
-                FinishText.SetActive(true);                                     // $   
-                FinishScoreText.GetComponent<Text>().text = Score.ToString();   // $
-                FinishScoreText.SetActive(true);                                // $
-                TextTextScore.SetActive(false);                                  // $
-                TextScore.SetActive(false);                                      // $
-                GamePlay = true;
+                
 
                 hintTimer -= Time.deltaTime;
                 if (hintTimer <= 0f) {
+                    for (int i = 0; i < moles.Length; i++)
+                        moles[i].GetComponent<Mole>().Hide();
+                    FinishText.SetActive(true);                                     // $   
+                    FinishScoreText.GetComponent<Text>().text = Score.ToString();   // $
+                    FinishScoreText.SetActive(true);                                // $
+                    TextTextScore.SetActive(false);                                  // $
+                    TextScore.SetActive(false);                                      // $
+                    GamePlay = true;
                     gameStart = false;                
                 }
             }

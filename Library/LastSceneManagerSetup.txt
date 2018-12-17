@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/FindObject/Scenes/FindObjects.unity
+- path: Assets/KillRabbit/KillRabbitScene.unity
   isLoaded: 1
   isActive: 1

@@ -34,7 +34,6 @@ public class Mole : MonoBehaviour {
     void Update() {
         disappearTimer -= Time.deltaTime;
         if (disappearTimer <= 0f) {
-            attackable = false;
             Hide();
         }
         transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * speed);
@@ -66,7 +65,8 @@ public class Mole : MonoBehaviour {
         return false;
     }
 
-    private void Hide() {
+    public void Hide() {
+        attackable = false;
         targetPosition = new Vector3(
             transform.localPosition.x,
             hiddenHeight,

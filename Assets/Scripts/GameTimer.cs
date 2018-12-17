@@ -37,7 +37,6 @@ public class GameTimer : MonoBehaviour
             //if (true)
             {
                 TimeCount();
-                Debug.Log("asd");
             }
             else
             {
