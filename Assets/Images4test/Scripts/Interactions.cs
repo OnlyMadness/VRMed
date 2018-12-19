@@ -28,6 +28,9 @@
         private int ApplyNumberImage;
         private int TestNumber = 1;
 
+        Color ColorSelect = new Color32(172, 217, 255, 80);
+        Color ColorDisable = new Color32(172, 217, 255, 0);
+
         private void OnDisable()
         {
             Restart_Test();
@@ -41,14 +44,18 @@
 
         public void ChoiceImage(int i)
         {
-            Color ColorSelect = new Color32(172, 217, 255, 80);
-            Color ColorDisable = new Color32(172, 217, 255, 0);
-            for (int j = 0; j < 4; j++)
-                Buttons[j].GetComponent<Image>().color = ColorDisable;
+
+            DisableButtonsAnswer();
             Buttons[i].GetComponent<Image>().color = ColorSelect;
 
             ApplyNumberImage = i;
             ApplyBtn.SetActive(true);
+        }
+
+        private void DisableButtonsAnswer()
+        {
+            for (int j = 0; j < 4; j++)
+                Buttons[j].GetComponent<Image>().color = ColorDisable;
         }
 
         public void ApplyImage()
@@ -59,6 +66,7 @@
             TextExplain.SetActive(true);
             ButtonExplain.SetActive(true);
             ApplyBtn.SetActive(false);
+            DisableButtonsAnswer();
         }
 
         public void Answer_1()
@@ -66,6 +74,7 @@
             StatiscticsList.Image_Number[StatiscticsList.NumberGroupEntry-1] = ApplyNumberImage;
             StatiscticsList.Why[StatiscticsList.NumberGroupEntry-1] = GameObject.Find("Answer_1").transform.GetChild(0).GetComponent<Text>().text;
             StatiscticsList.NumberGroupEntry++;
+            Debug.Log("1");
             NextImage();
         }
         public void Answer_2()
@@ -73,10 +82,12 @@
             StatiscticsList.Image_Number[StatiscticsList.NumberGroupEntry-1] = ApplyNumberImage;
             StatiscticsList.Why[StatiscticsList.NumberGroupEntry-1] = GameObject.Find("Answer_2").transform.GetChild(0).GetComponent<Text>().text;
             StatiscticsList.NumberGroupEntry++;
+            Debug.Log("2");
             NextImage();
         }
         public void Answer_3()
         {
+            Debug.Log("3");
             StatiscticsList.Image_Number[StatiscticsList.NumberGroupEntry-1] = ApplyNumberImage;
             StatiscticsList.Why[StatiscticsList.NumberGroupEntry-1] = GameObject.Find("Answer_3").transform.GetChild(0).GetComponent<Text>().text;
             StatiscticsList.NumberGroupEntry++;
@@ -84,6 +95,7 @@
         }
         public void Answer_4()
         {
+            Debug.Log("4");
             StatiscticsList.Image_Number[StatiscticsList.NumberGroupEntry-1] = ApplyNumberImage;
             StatiscticsList.Why[StatiscticsList.NumberGroupEntry-1] = GameObject.Find("Answer_4").transform.GetChild(0).GetComponent<Text>().text;
             StatiscticsList.NumberGroupEntry++;

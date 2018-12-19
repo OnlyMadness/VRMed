@@ -37,6 +37,18 @@ namespace VRTK.GrabAttachMechanics
                 OnPointer();
                 return;
             }
+            if (obj.name == "Legal_pad_Green")
+            {
+                Canvas_Select_Type_Objects.GetComponent<VRTK_UICanvas>().enabled = false;
+                Canvas_Select_Type_Objects.transform.Find("Panel").transform.Find("Start").gameObject.SetActive(false);
+                Canvas_Select_Type_Objects.transform.Find("Panel").transform.Find("Score").gameObject.SetActive(true);
+                CircleObjects.SetActive(false);
+                GameTimer.stop = false;
+                GameControllerFindObjects.TypeObjects = "Green";
+                GameControllerFindObjects.StartGameBool = true;
+                OnPointer();
+                return;
+            }
             if (obj.name == "MenuButton")
             {
                 Application.LoadLevel(1);

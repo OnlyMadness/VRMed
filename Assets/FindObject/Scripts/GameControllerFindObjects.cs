@@ -46,6 +46,10 @@ public class GameControllerFindObjects : MonoBehaviour {
         }
     }
 
+    public void ButtonTest() {
+        Application.LoadLevel(2);
+    }
+
     private void Finish()
     {
         for(int i = 0; i < 5;i++)
