@@ -21,6 +21,7 @@ TagManager:
   - ButtonsSchulte
   - Mole
   - Hammer
+  - SciFiWeapons
   layers:
   - Default
   - TransparentFX

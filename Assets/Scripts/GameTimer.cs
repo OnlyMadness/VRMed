@@ -33,7 +33,7 @@ public class GameTimer : MonoBehaviour
     {
         while (true)
         {
-            if (GameController.Game || GameControllerFindObjects.StartGameBool)
+            if (GameController.Game || GameControllerFindObjects.StartGameBool || GameControllerFindObjects_v2.StartGameBool)
             //if (true)
             {
                 TimeCount();
