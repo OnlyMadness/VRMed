@@ -21,8 +21,7 @@ public class SqlConnection : MonoBehaviour
 
     string Action;
     string AnswerServerSelect;
-    List<Patient> PatientList = new List<Patient>(); //здесь будет результат
-    //Создание метода, отвечающего за подключение и передачу данных
+    public List<Patient> PatientList = new List<Patient>(); //здесь будет результат
     public void Connect()
     {
         //string urlAddress = url;
@@ -44,18 +43,19 @@ public class SqlConnection : MonoBehaviour
          //   Debug.Log(PatientList[i].Id + " " + PatientList[i].FirstName + " " + PatientList[i].Lastname);
     }
 
-    public void SelectPatient()
+    public async Task SelectPatient()
     {
-        SelectPatientAsync(url);
+        await SelectPatientAsync(url);
+       // Debug.Log(PatientList[0].Lastname);
         //for (int i = 0; i < PatientList.Count - 1; i++)
-       //    Debug.Log(PatientList[i].Id + " " + PatientList[i].FirstName + " " + PatientList[i].Lastname);
+        //    Debug.Log(PatientList[i].Id + " " + PatientList[i].FirstName + " " + PatientList[i].Lastname);
     }
     public void InsertPatient()
     {
         PostInsertAsync(url);
     }
 
-    private async void SelectPatientAsync(string url)
+    private async Task SelectPatientAsync(string url)
     {
         WebRequest request = WebRequest.Create(url);
         request.Method = "POST";                                
@@ -75,9 +75,9 @@ public class SqlConnection : MonoBehaviour
               //  Debug.Log(reader.ReadToEnd());
                 AddPatient(reader.ReadToEnd());         
             }
-        }       
+        }
         response.Close();
-        Debug.Log("Запрос выполнен...");
+        Debug.Log("Запрос выполнен...");           
     }
     private async void PostInsertAsync(string url)
     {
@@ -109,7 +109,7 @@ public class SqlConnection : MonoBehaviour
         response.Close();
         Debug.Log("Запрос выполнен...");
     }
-    class Patient
+    public class Patient
     {
         public string Id { get; set; }
         public string FirstName { get; set; }
@@ -131,6 +131,7 @@ public class SqlConnection : MonoBehaviour
             string[] lineParts = lines[i].Split('\t');
             PatientList.Add(new Patient(lineParts[0], lineParts[1], lineParts[2]));
         }
+
     }
     //    WWWForm form = new WWWForm(); //Создаём новую форму 
     //                                  //Добавляем в форму новые данные

@@ -6,18 +6,18 @@ public class ControllerMenuMotorika : MonoBehaviour {
 
     public void StartNinja()
     {
-        Application.LoadLevel(3);
+        Application.LoadLevel(4);
     }
     public void StartFindObjects()
     {
-        Application.LoadLevel(4);
+        Application.LoadLevel(5);
     }
     public void Menu()
     {
-        Application.LoadLevel(0);
+        Application.LoadLevel(1);
     }
     public void StartKillRabbit()
     {
-        Application.LoadLevel(5);
+        Application.LoadLevel(6);
     }
 }

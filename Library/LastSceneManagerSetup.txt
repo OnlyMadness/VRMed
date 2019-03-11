@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/FindObject.v2/FindObject.v2.unity
+- path: Assets/Scenes/Login.unity
   isLoaded: 1
   isActive: 1

@@ -116,7 +116,7 @@ public class GameControllerRabbit : MonoBehaviour {
         //TextScore.GetComponent<Text>().text = "0";  // $
         //Score = 0;
 
-        Application.LoadLevel(1);
+        Application.LoadLevel(2);
     }
 
 }

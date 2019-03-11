@@ -19,7 +19,7 @@ public class AsteroidsAndPlanets : MonoBehaviour {
             }
             if (gameObject.tag == "MainMainMenu")
             {
-                Application.LoadLevel(1);
+                Application.LoadLevel(2);
             }
             if (gameObject.tag == "MainMenu")
             {

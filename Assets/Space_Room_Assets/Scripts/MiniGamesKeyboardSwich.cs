@@ -229,7 +229,7 @@ public class MiniGamesKeyboardSwich : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.J))
         {
-            Application.LoadLevel(0);          
+            Application.LoadLevel(1);          
         }
     }
 }

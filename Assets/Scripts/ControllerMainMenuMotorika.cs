@@ -10,19 +10,19 @@ public class ControllerMainMenuMotorika : MonoBehaviour
         {
             if (gameObject.name == "ButtonStartSpaceNinja")
             {
-                Application.LoadLevel(2);
+                Application.LoadLevel(3);
             }
             if (gameObject.name == "ButtonStartFindObject")
             {
-                Application.LoadLevel(3);
+                Application.LoadLevel(4);
             }
             if (gameObject.name == "Return")
             {
-                Application.LoadLevel(0);
+                Application.LoadLevel(1);
             }
             if (gameObject.name == "MotorikaMenuButton")
             {
-                Application.LoadLevel(1);
+                Application.LoadLevel(2);
             }
         }
     }

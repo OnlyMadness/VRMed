@@ -51,7 +51,7 @@ namespace VRTK.GrabAttachMechanics
             }
             if (obj.name == "MenuButton")
             {
-                Application.LoadLevel(1);
+                Application.LoadLevel(2);
             }
             if (obj.GetComponent<GrabObject>().Founded == false)
             {
