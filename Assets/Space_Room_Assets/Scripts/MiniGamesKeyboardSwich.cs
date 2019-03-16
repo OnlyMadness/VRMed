@@ -5,6 +5,7 @@ public class MiniGamesKeyboardSwich : MonoBehaviour {
     public GameObject[] MiniGames;
     public GameObject TerminalScreenSleepMode;
     public GameObject TerminalScreenForGames;
+    public GameObject BackroundTests;
 
     void Update ()
     {
@@ -230,6 +231,14 @@ public class MiniGamesKeyboardSwich : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.J))
         {
             Application.LoadLevel(1);          
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (BackroundTests.activeInHierarchy == true)
+                BackroundTests.SetActive(false);
+            else
+                BackroundTests.SetActive(true);
+                
         }
     }
 }

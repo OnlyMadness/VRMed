@@ -16,9 +16,12 @@ public class ControllerLogin : MonoBehaviour {
     private async void GetPatient()
     {
         SqlConnection SqlConnect = new SqlConnection();
-        await SqlConnect.SelectPatient();
-         for (int i = 0; i < SqlConnect.PatientList.Count; i++)       
+        await SqlConnect.SelectPatientAsync();
+        for (int i = 0; i < SqlConnect.PatientList.Count; i++)
+        {
             patients.Add(SqlConnect.PatientList[i].FirstName + " " + SqlConnect.PatientList[i].Lastname);
+            
+        }
         DropDown.AddOptions(patients);
         Wait.enabled = false;
         AcceptPatient.GetComponent<Button>().interactable = true;

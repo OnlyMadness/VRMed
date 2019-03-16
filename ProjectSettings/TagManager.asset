@@ -22,6 +22,7 @@ TagManager:
   - Mole
   - Hammer
   - SciFiWeapons
+  - BackgroundTests
   layers:
   - Default
   - TransparentFX
