@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/KillRabbit/KillRabbitScene.unity
     guid: 30810d3e71b76488a8871c652fa1caa1
+  - enabled: 1
+    path: Assets/FindObject.v2/FindObject.v2.unity
+    guid: 30a9b784fd4815f469283bc0499a43af
   m_configObjects: {}

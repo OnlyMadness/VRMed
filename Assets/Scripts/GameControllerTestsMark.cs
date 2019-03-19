@@ -19,7 +19,7 @@ public class GameControllerTestsMark : MonoBehaviour {
     public void FinishTests()
     {
         SqlConnection sqlconnect = new SqlConnection();
-        sqlconnect.PostInsertMarksCommentsAsync(TestsMark, TestsComment);
+        sqlconnect.PostInsertMarksCommentsTestAsync(TestsMark, TestsComment);
        // Application.LoadLevel(1);
     }
 }

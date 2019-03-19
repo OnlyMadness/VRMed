@@ -29,7 +29,7 @@ public class ControllerLogin : MonoBehaviour {
     }
     public void StartMenuTestsAndGames()
     {
-        Patient.Id = DropDown.value.ToString();
+        Patient.Id = DropDown.value+1;
         Patient.FullName = DropDown.transform.GetChild(0).GetComponent<Text>().text;
         Application.LoadLevel(1);
     }

@@ -13,6 +13,7 @@ public class GameControllerFindObjects : MonoBehaviour {
     public static string TypeObjects;
     public GameObject FoundedText;
     public static bool StartGameBool;
+    public GameObject FinishMarkCanvas;
 
     public GameObject GreenObjects;
     public GameObject CircleObjects;
@@ -20,9 +21,13 @@ public class GameControllerFindObjects : MonoBehaviour {
 
     public GameObject RightController;
     public GameObject LeftController;
+
+    private int MarkFindObjects;
+    private string CommentFindObjects;
+
     private void Start()
     {
-        Founded_Circles = 0;
+        Founded_Circles = 6;
         Founded_Green = 0;
     }
     private void Update()
@@ -41,15 +46,28 @@ public class GameControllerFindObjects : MonoBehaviour {
             CanvasSelectTypeObjects.transform.Find("Panel").transform.Find("Score").gameObject.SetActive(false);
             CanvasSelectTypeObjects.transform.Find("Panel").transform.Find("Finish").gameObject.SetActive(true);
             GameControllerFindObjects.StartGameBool = false;
-
-            Invoke("Finish", 10);         
+            FinishMarkCanvas.SetActive(true);
+            ///////////Invoke("Finish", 10);         так было
         }
     }
 
     public void ButtonTest() {
         Application.LoadLevel(3);
     }
-
+    public void Mark(Dropdown Mark)
+    {
+        MarkFindObjects = Mark.GetComponent<Dropdown>().value;
+    }
+    public void Comment(InputField Comment)
+    {
+        CommentFindObjects = Comment.text;
+    }
+    public async void FinishFindObjects()
+    {
+        SqlConnection sqlconnect = new SqlConnection();
+        await sqlconnect.PostInsertMarksCommentsGameAsync(Patient.Id, 2, MarkFindObjects, CommentFindObjects);
+        Application.LoadLevel(2);
+    }
     private void Finish()
     {
         for(int i = 0; i < 5;i++)

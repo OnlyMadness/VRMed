@@ -30,6 +30,10 @@ public class GameControllerRabbit : MonoBehaviour {
     private float gameplayCountdownTimer = 3f;
     public bool GamePlay;
 
+    public GameObject FinishMarkCanvas;
+    private int MarkRabbit;
+    private string CommentMarkRabbit;
+
     private void OnEnable()
     {
         FinishText.SetActive(false);                // $
@@ -40,6 +44,22 @@ public class GameControllerRabbit : MonoBehaviour {
         TextScore.GetComponent<Text>().text = "0";  // $
         Score = 0;
     }
+
+    public void Mark(Dropdown Mark)
+    {
+        MarkRabbit = Mark.GetComponent<Dropdown>().value;
+    }
+    public void Comment(InputField Comment)
+    {
+        CommentMarkRabbit = Comment.text;
+    }
+    public async void FinishRabbit()
+    {
+        SqlConnection sqlconnect = new SqlConnection();
+        await sqlconnect.PostInsertMarksCommentsGameAsync(Patient.Id, 3, MarkRabbit, CommentMarkRabbit);
+        Application.LoadLevel(2);
+    }
+
 
     // Use this for initialization
     void Start() {
@@ -69,9 +89,7 @@ public class GameControllerRabbit : MonoBehaviour {
                     spawnTimer = spawnDuration;
                 }
             }
-            else {
-                
-
+            else {              
                 hintTimer -= Time.deltaTime;
                 if (hintTimer <= 0f) {
                     for (int i = 0; i < moles.Length; i++)
@@ -82,12 +100,12 @@ public class GameControllerRabbit : MonoBehaviour {
                     TextTextScore.SetActive(false);                                  // $
                     TextScore.SetActive(false);                                      // $
                     GamePlay = true;
-                    gameStart = false;                
+                    gameStart = false;
+                    FinishMarkCanvas.SetActive(true);
                 }
             }
         }            
     }
-
     public void StartGame() {
         if (GamePlay)
         {

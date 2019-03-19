@@ -14,6 +14,10 @@ public class GameControllerNinja : MonoBehaviour {
     public static int Score;
     public static int Score_Error;
 
+    private int MarkSpaceNinja;
+    private string CommentSpaceNinja;
+
+    public GameObject CanvasFinishMark;
    // public GameObject Score_text;
    // public GameObject Score_Error_text;
 
@@ -51,7 +55,20 @@ public class GameControllerNinja : MonoBehaviour {
         Instantiate(Resources.Load("SpaceNinja/HardButton"));
         Game = true;
     }
-
+    public void Mark(Dropdown Mark)
+    {
+        MarkSpaceNinja = Mark.GetComponent<Dropdown>().value;
+    }
+    public void Comment(InputField Comment)
+    {
+       CommentSpaceNinja = Comment.text;
+    }
+    public async void FinishSpaceNinja()
+    {
+        SqlConnection sqlconnect = new SqlConnection();
+        await sqlconnect.PostInsertMarksCommentsGameAsync(Patient.Id,1,MarkSpaceNinja, CommentSpaceNinja);
+        Application.LoadLevel(2);
+    }
     private void Reset()
     {
         Score = 0;
@@ -83,9 +100,10 @@ public class GameControllerNinja : MonoBehaviour {
                 }
                 Score_stats_finish_text.GetComponent<Text>().text = Score.ToString();
                 Error_stats_finish_text.GetComponent<Text>().text = Score_Error.ToString();
-                Finish = false;
-                Reset();
-                Instantiate(Resources.Load("SpaceNinja/RetryButton"));
+                CanvasFinishMark.SetActive(true);
+                ////////Finish = false;
+                ////////Reset();
+                ////////Instantiate(Resources.Load("SpaceNinja/RetryButton")); было так
                // Instantiate(Resources.Load("SpaceNinja/MenuButton"));
             }
         }

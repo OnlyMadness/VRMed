@@ -20,4 +20,8 @@ public class ControllerMenuMotorika : MonoBehaviour {
     {
         Application.LoadLevel(6);
     }
+    public void StartFindObjects_v2()
+    {
+        Application.LoadLevel(7);
+    }
 }

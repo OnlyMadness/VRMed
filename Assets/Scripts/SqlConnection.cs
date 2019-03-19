@@ -49,6 +49,14 @@ public class SqlConnection : MonoBehaviour
         public int[] MarksJson;
         public string[] CommentsJson;
     }
+    public class GameJson
+    {
+        public int id_patient;
+        public int id_game;
+        public int Mark;
+        public string Comment;
+        public string Type;
+    }
     //public async Task SelectPatient()
     //{
     //    await SelectPatientAsync(url);
@@ -61,7 +69,7 @@ public class SqlConnection : MonoBehaviour
         PostInsertAsync(url);
     }
 
-    public async void PostInsertMarksCommentsAsync(int[] marks, string[] comments)
+    public async void PostInsertMarksCommentsTestAsync(int[] marks, string[] comments)
     {
         WebRequest request = WebRequest.Create(url);
         request.Method = "POST"; // для отправки используется метод Post
@@ -69,7 +77,7 @@ public class SqlConnection : MonoBehaviour
        // PatientJsonList.Add(new PatientJson { Type = "InsertMarksComments" });
         var patientJson = new PatientJson();
         patientJson.id_patient = Convert.ToInt32(Patient.Id);
-        patientJson.Type = "InsertMarksComments";
+        patientJson.Type = "InsertMarksCommentsTest";
         patientJson.MarksJson = new int[marks.Length];
         patientJson.CommentsJson = new string[comments.Length];
         for(int i =0;i< marks.Length; i++)
@@ -77,11 +85,11 @@ public class SqlConnection : MonoBehaviour
             patientJson.MarksJson[i] = marks[i];
             patientJson.CommentsJson[i] = comments[i];
         }
-        var testJson = JsonUtility.ToJson(patientJson);
+        var Json = JsonUtility.ToJson(patientJson);
        // var data = new { Type = "InsertMarksComments", password = "password" };
         // преобразуем данные в массив байтов
-        Debug.Log(testJson);
-        byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(testJson);
+       // Debug.Log(testJson);
+        byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(Json);
         // устанавливаем тип содержимого - параметр ContentType
         request.ContentType = "application/json";
         // Устанавливаем заголовок Content-Length запроса - свойство ContentLength
@@ -146,7 +154,88 @@ public class SqlConnection : MonoBehaviour
         //httpResponse.Close();
         //Debug.Log("Запрос выполнен...");
     }
+    public async Task PostInsertMarksCommentsGameAsync(int id_patient, int id_game, int mark, string comment)
+    {
+        WebRequest request = WebRequest.Create(url);
+        request.Method = "POST"; // для отправки используется метод Post
+                                 // данные для отправки
+                                 // PatientJsonList.Add(new PatientJson { Type = "InsertMarksComments" });
+        var _GameJson = new GameJson();
+        _GameJson.id_patient = id_patient;
+        _GameJson.id_game = id_game;
+        _GameJson.Type = "InsertMarksCommentsGame";
+        _GameJson.Mark = mark;
+        _GameJson.Comment = comment;
 
+        var Json = JsonUtility.ToJson(_GameJson);
+        // var data = new { Type = "InsertMarksComments", password = "password" };
+        // преобразуем данные в массив байтов
+       // Debug.Log(testJson);
+        byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(Json);
+        // устанавливаем тип содержимого - параметр ContentType
+        request.ContentType = "application/json";
+        // Устанавливаем заголовок Content-Length запроса - свойство ContentLength
+        request.ContentLength = byteArray.Length;
+
+        //записываем данные в поток запроса
+        using (Stream dataStream = await request.GetRequestStreamAsync())
+        {
+            dataStream.Write(byteArray, 0, byteArray.Length);
+        }
+
+        WebResponse response = await request.GetResponseAsync();
+        using (Stream stream = response.GetResponseStream())
+        {
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                Debug.Log(reader.ReadToEnd());
+            }
+        }
+        response.Close();
+        Debug.Log("Запрос выполнен...");
+
+        //WebRequest request = WebRequest.Create(url);
+        //var patientJson = new PatientJson { Type = "InsertMarksComments" };
+        //var testJson = JsonUtility.ToJson(patientJson);
+
+        //request.Method = "POST";
+        //request.ContentType = "application/json";
+
+        //using (var requestStream = await request.GetRequestStreamAsync())
+        //using (var writer = new StreamWriter(requestStream))
+        //{
+        //    writer.Write(testJson);
+        //}
+        //using (var httpResponse = await request.GetResponseAsync())
+        //using (var responseStream = httpResponse.GetResponseStream())
+        //using (var reader = new StreamReader(responseStream))
+        //{
+        //    string response = reader.ReadToEnd();
+        //}
+        //Debug.Log("Запрос выполнен...");
+
+        //var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+        //httpWebRequest.ContentType = "application/json";
+        //httpWebRequest.Method = "POST";
+
+        //using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+        //{
+        //    string json = "{\"user\":\"test\"," +
+        //                  "\"password\":\"bla\"}";
+
+        //    streamWriter.Write(json);
+        //    streamWriter.Flush();
+        //    streamWriter.Close();
+        //}
+
+        //var httpResponse = await httpWebRequest.GetResponseAsync();
+        //using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+        //{
+        //    var result = streamReader.ReadToEnd();
+        //}
+        //httpResponse.Close();
+        //Debug.Log("Запрос выполнен...");
+    }
 
     public async Task SelectPatientAsync()
     {
