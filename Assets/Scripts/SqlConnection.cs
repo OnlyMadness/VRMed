@@ -17,12 +17,13 @@ public class SqlConnection : MonoBehaviour
     private string pswd = ""; //Переменная для хранения пароля
     private string email = ""; //Переменная для хранения почтового ящика
     private string url = "https://vrmed.000webhostapp.com/index1.php"; //Переменная для хранения адреса
-
+    public int[] MarksTests = new int[4];
+    public int[] nScoreGame = new int[4];
 
     string Action;
     string AnswerServerSelect;
     public List<PatientsAdd> PatientList = new List<PatientsAdd>(); //здесь будет результат
-   // public List<PatientJson> PatientJsonList = new List<PatientJson>();
+    public List<RecommendationsGame> RecommendationsGamesList = new List<RecommendationsGame>(); //здесь будет результат
     public void Connect()
     {
         //string urlAddress = url;
@@ -43,6 +44,7 @@ public class SqlConnection : MonoBehaviour
         //for (int i = 0; i < PatientList.Count - 1; i++)
          //   Debug.Log(PatientList[i].Id + " " + PatientList[i].FirstName + " " + PatientList[i].Lastname);
     }
+
     public class PatientJson {
         public int id_patient;
         public string Type;
@@ -237,11 +239,37 @@ public class SqlConnection : MonoBehaviour
         //Debug.Log("Запрос выполнен...");
     }
 
+    public async Task SelectMarksPatientAsync(int id_patient)
+    {
+      
+        WebRequest request = WebRequest.Create(url);
+        request.Method = "POST";
+        string data = "Type=SelectMarksPatient&id_patients="+id_patient;
+        byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(data);
+        request.ContentType = "application/x-www-form-urlencoded";
+        request.ContentLength = byteArray.Length;
+        using (Stream dataStream = await request.GetRequestStreamAsync())
+        {
+            dataStream.Write(byteArray, 0, byteArray.Length);
+        }
+        WebResponse response = await request.GetResponseAsync();
+        using (Stream stream = response.GetResponseStream())
+        {
+            using (StreamReader reader = new StreamReader(stream))
+            {              
+               // Debug.Log(reader.ReadToEnd());
+                AddMarksPatient(reader.ReadToEnd());
+            }
+        }
+        response.Close();
+        Debug.Log("Запрос выполнен...");
+    }
+
     public async Task SelectPatientAsync()
     {
         WebRequest request = WebRequest.Create(url);
         request.Method = "POST";                                
-        string data = "Type=Select";       
+        string data = "Type=SelectPatients";       
         byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(data);      
         request.ContentType = "application/x-www-form-urlencoded";
         request.ContentLength = byteArray.Length;
@@ -303,6 +331,33 @@ public class SqlConnection : MonoBehaviour
             this.Lastname = Lastname;
         }
     }
+    public class RecommendationsGame
+    {
+        public int nScore { get; set; }
+        public int MarkTest { get; set; }
+        public RecommendationsGame(int nScore, int MarkTest)
+        {
+            this.nScore = nScore;
+            this.MarkTest = MarkTest;
+        }
+    }
+    private void AddMarksPatient(string AnswerServerSelect)
+    {
+        string[] lines = AnswerServerSelect.Split('\n');
+        for (int i = 0; i < lines.Length -1 ; i++)
+        {
+            if (lines[i] == "")
+                continue;
+            string[] lineParts = lines[i].Split('\t');
+            nScoreGame[Convert.ToInt32(lineParts[2]) - 1] = Convert.ToInt32(lineParts[3]);          
+            MarksTests[Convert.ToInt32(lineParts[2])-1] += Convert.ToInt32(lineParts[4]);
+        }
+        for(int i = 0; i< MarksTests.Length;i++)
+        {
+            RecommendationsGamesList.Add( new RecommendationsGame(nScoreGame[i], MarksTests[i]));
+        }
+    }
+
     private void AddPatient(string AnswerServerSelect)
     {
         string[] lines = AnswerServerSelect.Split('\n');
