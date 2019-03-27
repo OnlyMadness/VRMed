@@ -9,236 +9,236 @@ public class MiniGamesKeyboardSwich : MonoBehaviour {
 
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (GameControllerTestsMark.GradingActive == false)
         {
-            foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
-                canvas.ResetPaint();
-
-            foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
-                brush.CanDraw = true;
-
-            TerminalScreenSleepMode.SetActive(false);
-            TerminalScreenForGames.SetActive(true);
-
-            foreach (GameObject _obj in MiniGames)
-            {
-                _obj.SetActive(false);
-            }
-            MiniGames[0].SetActive(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
-                canvas.ResetPaint();
-
-            foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
-                brush.CanDraw = true;
-
-            TerminalScreenSleepMode.SetActive(false);
-            TerminalScreenForGames.SetActive(true);
-
-            foreach (GameObject _obj in MiniGames)
-            {
-                _obj.SetActive(false);
-            }
-            MiniGames[1].SetActive(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
-                canvas.ResetPaint();
-
-            foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
-                brush.CanDraw = true;
-
-            TerminalScreenSleepMode.SetActive(false);
-            TerminalScreenForGames.SetActive(true);
-
-            foreach (GameObject _obj in MiniGames)
-            {
-                _obj.SetActive(false);
-            }
-            MiniGames[2].SetActive(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            if (MiniGames[2].activeSelf == false)
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
-                canvas.ResetPaint();
+                    canvas.ResetPaint();
+
+                foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
+                    brush.CanDraw = true;
+
+                TerminalScreenSleepMode.SetActive(false);
+                TerminalScreenForGames.SetActive(true);
+
+                foreach (GameObject _obj in MiniGames)
+                {
+                    _obj.SetActive(false);
+                }
+                MiniGames[0].SetActive(true);
             }
 
-            foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
-                brush.CanDraw = false;
-
-            TerminalScreenSleepMode.SetActive(false);
-            TerminalScreenForGames.SetActive(true);
-
-            foreach (GameObject _obj in MiniGames)
+            if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                _obj.SetActive(false);
+                foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
+                    canvas.ResetPaint();
+
+                foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
+                    brush.CanDraw = true;
+
+                TerminalScreenSleepMode.SetActive(false);
+                TerminalScreenForGames.SetActive(true);
+
+                foreach (GameObject _obj in MiniGames)
+                {
+                    _obj.SetActive(false);
+                }
+                MiniGames[1].SetActive(true);
             }
-            MiniGames[3].SetActive(true);
-        }
 
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
-                canvas.ResetPaint();
-
-            foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
-                brush.CanDraw = false;
-
-            TerminalScreenSleepMode.SetActive(false);
-            TerminalScreenForGames.SetActive(true);
-
-            foreach (GameObject _obj in MiniGames)
+            if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                _obj.SetActive(false);
+                foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
+                    canvas.ResetPaint();
+
+                foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
+                    brush.CanDraw = true;
+
+                TerminalScreenSleepMode.SetActive(false);
+                TerminalScreenForGames.SetActive(true);
+
+                foreach (GameObject _obj in MiniGames)
+                {
+                    _obj.SetActive(false);
+                }
+                MiniGames[2].SetActive(true);
             }
-            MiniGames[4].SetActive(true);
-        }
 
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
-                canvas.ResetPaint();
-
-            foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
-                brush.CanDraw = false;
-
-            TerminalScreenSleepMode.SetActive(false);
-            TerminalScreenForGames.SetActive(true);
-
-            foreach (GameObject _obj in MiniGames)
+            if (Input.GetKeyDown(KeyCode.Alpha4))
             {
-                _obj.SetActive(false);
+                if (MiniGames[2].activeSelf == false)
+                {
+                    foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
+                        canvas.ResetPaint();
+                }
+
+                foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
+                    brush.CanDraw = false;
+
+                TerminalScreenSleepMode.SetActive(false);
+                TerminalScreenForGames.SetActive(true);
+
+                foreach (GameObject _obj in MiniGames)
+                {
+                    _obj.SetActive(false);
+                }
+                MiniGames[3].SetActive(true);
             }
-            MiniGames[5].SetActive(true);
-        }
 
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
-                canvas.ResetPaint();
-
-            foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
-                brush.CanDraw = false;
-
-            TerminalScreenSleepMode.SetActive(false);
-            TerminalScreenForGames.SetActive(true);
-
-            foreach (GameObject _obj in MiniGames)
+            if (Input.GetKeyDown(KeyCode.Alpha5))
             {
-                _obj.SetActive(false);
+                foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
+                    canvas.ResetPaint();
+
+                foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
+                    brush.CanDraw = false;
+
+                TerminalScreenSleepMode.SetActive(false);
+                TerminalScreenForGames.SetActive(true);
+
+                foreach (GameObject _obj in MiniGames)
+                {
+                    _obj.SetActive(false);
+                }
+                MiniGames[4].SetActive(true);
             }
-            MiniGames[6].SetActive(true);
-        }
 
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
-                canvas.ResetPaint();
-
-            foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
-                brush.CanDraw = false;
-
-            TerminalScreenSleepMode.SetActive(false);
-            TerminalScreenForGames.SetActive(true);
-
-            foreach (GameObject _obj in MiniGames)
+            if (Input.GetKeyDown(KeyCode.Alpha6))
             {
-                _obj.SetActive(false);
+                foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
+                    canvas.ResetPaint();
+
+                foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
+                    brush.CanDraw = false;
+
+                TerminalScreenSleepMode.SetActive(false);
+                TerminalScreenForGames.SetActive(true);
+
+                foreach (GameObject _obj in MiniGames)
+                {
+                    _obj.SetActive(false);
+                }
+                MiniGames[5].SetActive(true);
             }
-            MiniGames[7].SetActive(true);
-        }
 
-        if (Input.GetKeyDown(KeyCode.Alpha9))
-        {
-            foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
-                canvas.ResetPaint();
-
-            foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
-                brush.CanDraw = false;
-
-            TerminalScreenSleepMode.SetActive(false);
-            TerminalScreenForGames.SetActive(true);
-
-            foreach (GameObject _obj in MiniGames)
+            if (Input.GetKeyDown(KeyCode.Alpha7))
             {
-                _obj.SetActive(false);
+                foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
+                    canvas.ResetPaint();
+
+                foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
+                    brush.CanDraw = false;
+
+                TerminalScreenSleepMode.SetActive(false);
+                TerminalScreenForGames.SetActive(true);
+
+                foreach (GameObject _obj in MiniGames)
+                {
+                    _obj.SetActive(false);
+                }
+                MiniGames[6].SetActive(true);
             }
-            MiniGames[8].SetActive(true);
-        }
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
-                canvas.ResetPaint();
-
-            foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
-                brush.CanDraw = false;
-
-            TerminalScreenSleepMode.SetActive(false);
-            TerminalScreenForGames.SetActive(true);
-
-            foreach (GameObject _obj in MiniGames)
+            if (Input.GetKeyDown(KeyCode.Alpha8))
             {
-                _obj.SetActive(false);
+                foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
+                    canvas.ResetPaint();
+
+                foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
+                    brush.CanDraw = false;
+
+                TerminalScreenSleepMode.SetActive(false);
+                TerminalScreenForGames.SetActive(true);
+
+                foreach (GameObject _obj in MiniGames)
+                {
+                    _obj.SetActive(false);
+                }
+                MiniGames[7].SetActive(true);
             }
-            MiniGames[9].SetActive(true);
-        }
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
-                canvas.ResetPaint();
-
-            foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
-                brush.CanDraw = false;
-
-            TerminalScreenSleepMode.SetActive(false);
-            TerminalScreenForGames.SetActive(true);
-
-            foreach (GameObject _obj in MiniGames)
+            if (Input.GetKeyDown(KeyCode.Alpha9))
             {
-                _obj.SetActive(false);
+                foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
+                    canvas.ResetPaint();
+
+                foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
+                    brush.CanDraw = false;
+
+                TerminalScreenSleepMode.SetActive(false);
+                TerminalScreenForGames.SetActive(true);
+
+                foreach (GameObject _obj in MiniGames)
+                {
+                    _obj.SetActive(false);
+                }
+                MiniGames[8].SetActive(true);
             }
-            MiniGames[10].SetActive(true);
 
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
-                canvas.ResetPaint();
-
-            foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
-                brush.CanDraw = false;
-
-            TerminalScreenSleepMode.SetActive(true);
-            TerminalScreenForGames.SetActive(false);
-
-            foreach (GameObject _obj in MiniGames)
+            if (Input.GetKeyDown(KeyCode.K))
             {
-                _obj.SetActive(false);
-            }
-        }
+                foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
+                    canvas.ResetPaint();
 
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Application.LoadLevel(1);          
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (BackroundTests.activeInHierarchy == true)
-                BackroundTests.SetActive(false);
-            else
+                foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
+                    brush.CanDraw = false;
+
+                TerminalScreenSleepMode.SetActive(false);
+                TerminalScreenForGames.SetActive(true);
+
+                foreach (GameObject _obj in MiniGames)
+                {
+                    _obj.SetActive(false);
+                }
+                MiniGames[9].SetActive(true);
+            }
+
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
+                    canvas.ResetPaint();
+
+                foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
+                    brush.CanDraw = false;
+
+                TerminalScreenSleepMode.SetActive(false);
+                TerminalScreenForGames.SetActive(true);
+
+                foreach (GameObject _obj in MiniGames)
+                {
+                    _obj.SetActive(false);
+                }
+                MiniGames[10].SetActive(true);
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha0))
+            {
+                foreach (var canvas in FindObjectsOfType<Es.InkPainter.InkCanvas>())
+                    canvas.ResetPaint();
+
+                foreach (var brush in FindObjectsOfType<Es.InkPainter.Sample.MousePainter>())
+                    brush.CanDraw = false;
+
+                TerminalScreenSleepMode.SetActive(true);
+                TerminalScreenForGames.SetActive(false);
+
+                foreach (GameObject _obj in MiniGames)
+                {
+                    _obj.SetActive(false);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                Application.LoadLevel(1);
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                GameControllerTestsMark.GradingActive = true;
                 BackroundTests.SetActive(true);
-                
+            }
         }
     }
 }

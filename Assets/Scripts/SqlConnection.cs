@@ -352,9 +352,12 @@ public class SqlConnection : MonoBehaviour
             nScoreGame[Convert.ToInt32(lineParts[2]) - 1] = Convert.ToInt32(lineParts[3]);          
             MarksTests[Convert.ToInt32(lineParts[2])-1] += Convert.ToInt32(lineParts[4]);
         }
-        for(int i = 0; i< MarksTests.Length;i++)
+        if (lines[0] != "0 results")
         {
-            RecommendationsGamesList.Add( new RecommendationsGame(nScoreGame[i], MarksTests[i]));
+            for (int i = 0; i < MarksTests.Length; i++)
+            {
+                RecommendationsGamesList.Add(new RecommendationsGame(nScoreGame[i], MarksTests[i]));
+            }
         }
     }
 
