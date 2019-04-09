@@ -5,14 +5,21 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameControllerTestsMark : MonoBehaviour {
-    public static int[] TestsMark = new int[11];
-    public static string[] TestsComment = new string[11];
+    public static string[] TestsMark = new string[Session.TestList.Length];
+    public static string[] TestsComment = new string[Session.TestList.Length];
     public GameObject WindowForMark;
     public static bool GradingActive;
+    //private void Start()
+    //{
+    //    for (int i = 1; i < TestsMark.Length; i++)
+    //        TestsMark[i] = null;
+    //}
     public void SetMark(Dropdown DropDownMark)
     {
-        TestsMark[Convert.ToInt32(DropDownMark.gameObject.name)-1] = DropDownMark.GetComponent<Dropdown>().value;
-        
+        if((DropDownMark.GetComponent<Dropdown>().value - 1) == -1)
+            TestsMark[Convert.ToInt32(DropDownMark.gameObject.name) - 1] = null;
+        else
+           TestsMark[Convert.ToInt32(DropDownMark.gameObject.name)-1] = (DropDownMark.GetComponent<Dropdown>().value-1).ToString();       
     }
     public void SetComment(InputField InputFieldComment)
     {

@@ -66,7 +66,7 @@ public class GameControllerNinja : MonoBehaviour {
     public async void FinishSpaceNinja()
     {
         SqlConnection sqlconnect = new SqlConnection();
-        await sqlconnect.PostInsertMarksCommentsGameAsync(Patient.Id,1,MarkSpaceNinja, CommentSpaceNinja);
+        await sqlconnect.PostInsertMarksCommentsGameAsync(Session.Id_Patient,1,MarkSpaceNinja, CommentSpaceNinja);
         Application.LoadLevel(2);
     }
     private void Reset()

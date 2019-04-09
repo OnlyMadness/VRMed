@@ -7,7 +7,7 @@ public class ControllerRecommendations : MonoBehaviour {
 	// Use this for initialization
 	async void Start () {
         SqlConnection sqlconnect = new SqlConnection();
-        await sqlconnect.SelectMarksPatientAsync(Patient.Id);
+        await sqlconnect.SelectMarksPatientAsync(Session.Id_Patient);
         for (int i = 0; i < sqlconnect.RecommendationsGamesList.Count; i++)
         {
             if (sqlconnect.RecommendationsGamesList[i].nScore <= sqlconnect.RecommendationsGamesList[i].MarkTest)

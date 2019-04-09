@@ -56,7 +56,7 @@ public class GameControllerFindObjects_v2 : MonoBehaviour {
     public async void FinishFindObjects_v2()
     {
         SqlConnection sqlconnect = new SqlConnection();
-        await sqlconnect.PostInsertMarksCommentsGameAsync(Patient.Id, 4, MarkFindObjects_v2, CommentFindObjects_v2);
+        await sqlconnect.PostInsertMarksCommentsGameAsync(Session.Id_Patient, 4, MarkFindObjects_v2, CommentFindObjects_v2);
         Application.LoadLevel(2);
     }
     public void ButtonTest() {

@@ -56,7 +56,7 @@ public class GameControllerRabbit : MonoBehaviour {
     public async void FinishRabbit()
     {
         SqlConnection sqlconnect = new SqlConnection();
-        await sqlconnect.PostInsertMarksCommentsGameAsync(Patient.Id, 3, MarkRabbit, CommentMarkRabbit);
+        await sqlconnect.PostInsertMarksCommentsGameAsync(Session.Id_Patient, 3, MarkRabbit, CommentMarkRabbit);
         Application.LoadLevel(2);
     }
 
