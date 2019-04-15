@@ -25,6 +25,10 @@ public class GameControllerTestsMark : MonoBehaviour {
     {
         TestsComment[Convert.ToInt32(InputFieldComment.gameObject.name)-1] = InputFieldComment.text;
     }
+    public void MenuTestsAndGames()
+    {
+        Application.LoadLevel(1);
+    }
     public void FinishTests()
     {
         SqlConnection sqlconnect = new SqlConnection();

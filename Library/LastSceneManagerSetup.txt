@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MenuMotorika.unity
+- path: Assets/Scenes/MainSceneRoom.unity
   isLoaded: 1
   isActive: 1

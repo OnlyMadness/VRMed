@@ -27,12 +27,24 @@ public class GameControllerFindObjects : MonoBehaviour {
 
     private void Start()
     {
-        Founded_Circles = 6;
+        Founded_Circles = 0;
         Founded_Green = 0;
+    }
+    public void CloseMenuCanvas()
+    {
+        FinishMarkCanvas.SetActive(false);
+    }
+    public void MenuGames()
+    {
+        Application.LoadLevel(2);
     }
     private void Update()
     {
-        if(TypeObjects == "Circle")
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            FinishMarkCanvas.SetActive(true);
+        }
+        if (TypeObjects == "Circle")
             FoundedText.GetComponent<Text>().text = Founded_Circles.ToString();
         else
             FoundedText.GetComponent<Text>().text = Founded_Green.ToString();

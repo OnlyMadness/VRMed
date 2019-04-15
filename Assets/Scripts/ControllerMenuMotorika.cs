@@ -3,7 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ControllerMenuMotorika : MonoBehaviour {
-
+    public GameObject CanvasMenu;
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            CanvasMenu.SetActive(true);
+        }
+    }
+    public void CloseCanvasMenu()
+    {
+        CanvasMenu.SetActive(false);
+    }
     public void StartNinja()
     {
         Application.LoadLevel(4);
@@ -24,4 +35,5 @@ public class ControllerMenuMotorika : MonoBehaviour {
     {
         Application.LoadLevel(7);
     }
+
 }

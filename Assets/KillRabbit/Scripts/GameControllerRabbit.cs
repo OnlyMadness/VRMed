@@ -44,7 +44,14 @@ public class GameControllerRabbit : MonoBehaviour {
         TextScore.GetComponent<Text>().text = "0";  // $
         Score = 0;
     }
-
+    public void CloseMenuCanvas()
+    {
+        FinishMarkCanvas.SetActive(false);
+    }
+    public void MenuGames()
+    {
+        Application.LoadLevel(2);
+    }
     public void Mark(Dropdown Mark)
     {
         MarkRabbit = Mark.GetComponent<Dropdown>().value;
@@ -71,6 +78,10 @@ public class GameControllerRabbit : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            FinishMarkCanvas.SetActive(true);
+        }
         if (!gameStart) {
             return;
         }

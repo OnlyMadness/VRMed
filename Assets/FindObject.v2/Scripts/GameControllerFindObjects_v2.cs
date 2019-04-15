@@ -21,11 +21,23 @@ public class GameControllerFindObjects_v2 : MonoBehaviour {
 
     private void Start()
     {
-        Founded_Weapons = 20;
+        Founded_Weapons = 0;
         StartGameBool = true;
+    }
+    public void CloseMenuCanvas()
+    {
+        FinishMarkCanvas.SetActive(false);
+    }
+    public void MenuGames()
+    {
+        Application.LoadLevel(2);
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            FinishMarkCanvas.SetActive(true);
+        }
         //if(TypeObjects == "Circle")
         //    FoundedText.GetComponent<Text>().text = Founded_Circles.ToString();
         //else

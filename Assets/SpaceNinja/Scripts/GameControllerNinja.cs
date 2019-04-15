@@ -36,7 +36,14 @@ public class GameControllerNinja : MonoBehaviour {
     //{
     //    yield return new WaitForSeconds(1);
     //}
-
+    public void CloseMenuCanvas()
+    {
+        CanvasFinishMark.SetActive(false);
+    }
+    public void MenuGames()
+    {
+        Application.LoadLevel(2);
+    }
     public static void GameStart()
     {
        // Canvas_stats.GetComponent<Canvas>().enabled = false;
@@ -78,6 +85,10 @@ public class GameControllerNinja : MonoBehaviour {
     }
     // Update is called once per frame
     void Update () {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            CanvasFinishMark.SetActive(true);
+        }
         if (Game)
         {
            // Score_text.GetComponent<Text>().text = Score.ToString();
