@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MainSceneRoom.unity
+- path: Assets/KillRabbit/KillRabbitScene.unity
   isLoaded: 1
   isActive: 1
